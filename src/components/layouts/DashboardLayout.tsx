@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import DashboardNavbar from "../ui/dashboard/DashboardNavbar";
 import { MdOutlineCalculate } from "react-icons/md";
 import { FaListUl, FaPlus } from "react-icons/fa";
+import { FaPenToSquare } from "react-icons/fa6";
 
 const DashboardLayout = () => {
   return (
@@ -71,6 +72,23 @@ const DashboardLayout = () => {
                   <FaPlus />
                 </span>{" "}
                 Create Supply
+              </h3>
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/create-testimonial"
+              className={({ isActive }) =>
+                ` px-4 py-3 text-base rounded-lg mb-3 ${
+                  isActive ? "bg-primary text-white" : ""
+                }`
+              }
+            >
+              <h3 className="flex items-center gap-3">
+                {" "}
+                <span className="text-xl">
+                  <FaPenToSquare />
+                </span>{" "}
+                Add Testimonial
               </h3>
             </NavLink>
           </ul>

@@ -4,15 +4,23 @@ type TReviewsData = {
   userImage: string;
   userName: string;
   userDesignation: string;
+  supplyContribution: {
+    supplyItem: string;
+    quantityAmount: string;
+  };
 };
 
 const reviewsData: TReviewsData[] = [
   {
     id: 1,
-    review: "Great experience volunteering here! Highly recommended.",
+    review: "Great experience Donating here! Highly recommended.",
     userImage: "https://i.imgur.com/IwfNREx.jpg",
     userName: "Emily Johnson",
-    userDesignation: "Community Helper",
+    userDesignation: "Co-Founder, Boat",
+    supplyContribution: {
+      supplyItem: "Basmati Rice",
+      quantityAmount: "100 Kg",
+    },
   },
   {
     id: 2,

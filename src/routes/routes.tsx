@@ -12,6 +12,7 @@ import DashboardAllSupplies from "../components/ui/dashboard/DashboardAllSupplie
 import SignUp from "../pages/SignUp";
 import SupplyDetails from "../components/ui/home/SupplyDetails";
 import ProtectedRoute from "../components/layouts/ProtectedRoute";
+import CreateTestimonials from "../components/ui/dashboard/CreateTestimonials";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,15 @@ const router = createBrowserRouter([
           <ProtectedRoute>
             {" "}
             <CreateSupply></CreateSupply>{" "}
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "create-testimonial",
+        element: (
+          <ProtectedRoute>
+            {" "}
+            <CreateTestimonials></CreateTestimonials>{" "}
           </ProtectedRoute>
         ),
       },

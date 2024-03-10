@@ -76,7 +76,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
             onChange={(e) => setTitle(e.target.value)}
             type="text"
             placeholder="Title"
-            className="input input-bordered w-full mb-3"
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.title || ""}
           />
 
@@ -86,12 +86,12 @@ const Modal = ({ id, handleModalClose }: TModal) => {
               defaultValue={SingleSupplyData?.quantity.quantity || ""}
               type="number"
               placeholder="Quantity "
-              className="input input-bordered w-full"
+              className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             />
             <select
               onChange={(e) => setQuantityUnit(e.target.value)}
               name="selectedUnit"
-              className="select select-bordered w-full "
+              className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full "
               defaultValue={SingleSupplyData?.quantity?.quantityUnit || ""}
             >
               <option disabled>Select Units</option>
@@ -103,7 +103,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
 
           <select
             onChange={(e) => setCategory(e.target.value)}
-            className="select select-bordered w-full mb-3"
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.category || ""}
           >
             <option disabled>Select Category</option>
@@ -115,7 +115,8 @@ const Modal = ({ id, handleModalClose }: TModal) => {
           <textarea
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Description"
-            className="textarea textarea-bordered textarea-md w-full mb-3"
+            rows={4}
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.description || ""}
           ></textarea>
 
@@ -123,7 +124,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
             onChange={(e) => setImage(e.target.value)}
             type="text"
             placeholder="Product Image URL"
-            className="input input-bordered w-full mb-3"
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.image || ""}
           />
 
@@ -131,7 +132,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
             onChange={(e) => setDonorName(e.target.value)}
             type="text"
             placeholder="Donor Name"
-            className="input input-bordered w-full mb-3"
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.donorName || ""}
           />
 
@@ -139,7 +140,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
             onChange={(e) => setDonorEmail(e.target.value)}
             type="text"
             placeholder="Donor Email Address"
-            className="input input-bordered w-full "
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full "
             defaultValue={SingleSupplyData?.donorEmail || ""}
           />
 

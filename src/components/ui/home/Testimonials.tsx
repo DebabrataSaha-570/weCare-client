@@ -98,7 +98,7 @@ const Testimonials = () => {
         <h3 className="text-[--color1] text-2xl md:text-3xl mb-3 font-serif">
           Testimonials
         </h3>
-        <h2 className="text-4xl font-semibold">Read Our User's Feedback </h2>
+        <h2 className="text-4xl font-semibold">Read Our Donor's Feedback </h2>
       </div>
 
       <div className="my-10">
@@ -106,11 +106,22 @@ const Testimonials = () => {
           <Slider {...settings}>
             {reviewsData.map((review) => (
               <div key={review.id}>
-                <div className="card  h-[230px] bg-[--color2] mx-2">
+                <div className="card   bg-[--color2] mx-2">
                   <div className="card-body text-quickSand">
                     <p className="text-lg text-gray-500 font-semibold">
                       {review.review}
                     </p>
+
+                    <div>
+                      <p className="text-gray-500 font-bold">
+                        Donation :{" "}
+                        <span className="text-[--color1] font-bold">
+                          {" "}
+                          {review.supplyContribution?.supplyItem},{" "}
+                          {review.supplyContribution?.quantityAmount}{" "}
+                        </span>
+                      </p>
+                    </div>
 
                     <div className="flex items-center gap-5 mt-5">
                       <div className="avatar">

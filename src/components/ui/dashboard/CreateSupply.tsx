@@ -66,7 +66,7 @@ const CreateSupply = () => {
             value={title}
             type="text"
             placeholder="Title"
-            className="input input-bordered w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           />
 
@@ -76,12 +76,12 @@ const CreateSupply = () => {
               value={quantity}
               type="number"
               placeholder="Quantity "
-              className="input input-bordered w-full"
+              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             />
             <select
               onChange={(e) => setQuantityUnit(e.target.value)}
               name="selectedUnit"
-              className="select select-bordered w-full "
+              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             >
               <option value={quantityUnit} disabled selected>
                 Select Units
@@ -94,7 +94,7 @@ const CreateSupply = () => {
 
           <select
             onChange={(e) => setCategory(e.target.value)}
-            className="select select-bordered w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
           >
             <option value={category} disabled selected>
               Select Category
@@ -107,8 +107,9 @@ const CreateSupply = () => {
           <textarea
             onChange={(e) => setDescription(e.target.value)}
             value={description}
+            rows={3}
             placeholder="Description"
-            className="textarea textarea-bordered textarea-md w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           ></textarea>
 
@@ -117,7 +118,7 @@ const CreateSupply = () => {
             value={image}
             type="text"
             placeholder="Product Image URL"
-            className="input input-bordered w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           />
 
@@ -126,7 +127,7 @@ const CreateSupply = () => {
             defaultValue={donorName}
             type="text"
             placeholder="Donor Name"
-            className="input input-bordered w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           />
 
@@ -135,7 +136,7 @@ const CreateSupply = () => {
             defaultValue={auth.user?.email || donorEmail}
             type="text"
             placeholder="Donor Email"
-            className="input input-bordered w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           />
 
