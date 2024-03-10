@@ -3,13 +3,31 @@ import Container from "../Container";
 import { GiFullPizza } from "react-icons/gi";
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
 import { logOut } from "../../../redux/features/auth/authSlice";
+import { themeChange } from "../../../redux/features/theme/themeSlice";
+import { FaRegMoon } from "react-icons/fa";
+import { PiSunBold } from "react-icons/pi";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const auth = useAppSelector((state) => state.auth);
+  const { darkMode } = useAppSelector((state) => state.theme);
+
   const handleLogout = () => {
     dispatch(logOut());
   };
+
+  const handleThemeChange = () => {
+    dispatch(themeChange());
+  };
+
+  useEffect(() => {
+    const htmlElement = document.querySelector("html");
+    if (htmlElement) {
+      // document.querySelector("html").setAttribute("data-theme", darkMode? 'dark' : 'light' );
+      htmlElement.setAttribute("data-theme", darkMode ? "dark" : "weEatTheme");
+    }
+  }, [darkMode]);
   const menuItems = (
     <>
       <li>
@@ -39,6 +57,15 @@ const Navbar = () => {
           <Link to="/login"> Login </Link>
         </li>
       )}
+      <li className="flex justify-center">
+        <span onClick={handleThemeChange} className="">
+          {darkMode ? (
+            <PiSunBold className="size-5" />
+          ) : (
+            <FaRegMoon className="size-5" />
+          )}
+        </span>
+      </li>
     </>
   );
   return (

@@ -4,15 +4,24 @@ export default {
   daisyui: {
     themes: [
       {
-        weEatTheme: {
+        weCareTheme: {
           primary: "#F74F22",
           secondary: "#222328",
+          // accent: "#000000",
           accent: "#DD5E12",
+          // neutral: "#000000",
           neutral: "#F74F22",
+          // "base-100": "#ffff",
+          // "base-100": "#FFFFFF",
 
           "--color1": "#FFAC00",
           "--color2": "#FBF7F4",
         },
+      },
+      {
+        // dark: {
+        //   ...require("daisyui/src/theming/themes")["dark"],
+        // },
       },
     ],
   },
