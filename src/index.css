@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-slider {
+  position: relative;
+}
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  background-color: #fcfcfc;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* border: 2px solid #ffac00; */
+  box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 30%);
+  padding: 7px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transition: ease;
+  transition-duration: 0.5s;
+}
+.slick-arrow.slick-next:hover {
+  background-color: #f74f22;
+  color: white;
+}
+.slick-arrow.slick-prev:hover {
+  background-color: #f74f22;
+  color: white;
+}
+
+.slick-prev {
+  left: 15px;
+}
+.slick-next {
+  right: 15px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
+.text-quickSand {
+  font-family: "Quicksand", sans-serif;
+}
+.banner-image {
+  filter: grayscale(100%) brightness(60%);
+}
