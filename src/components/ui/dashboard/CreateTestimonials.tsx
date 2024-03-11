@@ -1,4 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useEffect } from "react";
+import { useCreateTestimonialMutation } from "../../../redux/features/weCare/weCare.api";
 type FormInputs = {
   name: string;
   designation: string;
@@ -11,11 +14,21 @@ type FormInputs = {
 
 const CreateTestimonials = () => {
   const { register, handleSubmit, reset } = useForm<FormInputs>();
+  const [addTestimonials, { data, isLoading, isError }] =
+    useCreateTestimonialMutation();
 
-  const handleFormSubmit: SubmitHandler<FormInputs> = async (data) => {
-    console.log("data", data);
-    reset();
+  const handleFormSubmit: SubmitHandler<FormInputs> = (formData) => {
+    addTestimonials(formData);
   };
+
+  useEffect(() => {
+    if (data) {
+      toast.success("Testimonials Added Successfully");
+      reset();
+    } else if (isError) {
+      toast.error("Something Went wrong");
+    }
+  }, [data, isError, reset]);
 
   return (
     <div>
@@ -69,9 +82,7 @@ const CreateTestimonials = () => {
               className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
               {...register("unit", { required: true })}
             >
-              <option disabled selected>
-                Select Units
-              </option>
+              <option disabled>Select Units</option>
               <option value="kg">Kg</option>
               <option value="litre">litre</option>
               <option value="Pcs">Pcs</option>
@@ -86,9 +97,16 @@ const CreateTestimonials = () => {
             required
           ></textarea>
 
-          <button type="submit" className="btn btn-secondary">
-            Add item
-          </button>
+          {isLoading ? (
+            <button className="btn">
+              <span className="loading loading-spinner"></span>
+              loading
+            </button>
+          ) : (
+            <button type="submit" className="btn btn-secondary">
+              Add item
+            </button>
+          )}
         </form>
       </div>
     </div>

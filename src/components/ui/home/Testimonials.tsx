@@ -1,7 +1,7 @@
 import Container from "../Container";
-import reviewsData from "../../../assets/data/reviewsData.ts";
 import Slider from "react-slick";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import { useGetTestimonialsDataQuery } from "../../../redux/features/weCare/weCare.api";
 
 type AutoButtonProps = {
   className: string;
@@ -10,7 +10,32 @@ type AutoButtonProps = {
   slideCount?: number;
 };
 
+type TTestimonial = {
+  _id: string;
+  name: string;
+  designation: string;
+  image: string;
+  supply: string;
+  quantity: string;
+  unit: string;
+  testimonial: string;
+};
+
 const Testimonials = () => {
+  const { data, isError, isLoading } = useGetTestimonialsDataQuery(null);
+
+  if (isError) {
+    return <p className="text-red-500">Something went wrong.</p>;
+  }
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <span className="loading loading-bars loading-lg "></span>
+      </div>
+    );
+  }
+
   const slidesToShow = 3;
   const PreviousBtn = ({
     className,
@@ -104,21 +129,21 @@ const Testimonials = () => {
       <div className="my-10">
         <div className="slider-container">
           <Slider {...settings}>
-            {reviewsData.map((review) => (
-              <div key={review.id}>
+            {data?.slice(0, 6)?.map((testimonial: TTestimonial) => (
+              <div key={testimonial._id}>
                 <div className="card   bg-[--color2] mx-2">
                   <div className="card-body text-quickSand">
                     <p className="text-lg text-gray-500 font-semibold">
-                      {review.review}
+                      {testimonial.testimonial}
                     </p>
 
                     <div>
                       <p className="text-gray-500 font-bold">
                         Donation :{" "}
-                        <span className="text-[--color1] font-bold">
+                        <span className="text-black font-bold">
                           {" "}
-                          {review.supplyContribution?.supplyItem},{" "}
-                          {review.supplyContribution?.quantityAmount}{" "}
+                          {testimonial.supply}, {testimonial.quantity}{" "}
+                          {testimonial.unit}{" "}
                         </span>
                       </p>
                     </div>
@@ -128,15 +153,17 @@ const Testimonials = () => {
                         <div className="w-20 rounded-full">
                           <img
                             className="object-cover w-full h-full"
-                            src={review.userImage}
-                            alt={review.userName}
+                            src={testimonial.image}
+                            alt={testimonial.name}
                           />
                         </div>
                       </div>
                       <div>
-                        <h2 className="font-bold text-xl">{review.userName}</h2>
+                        <h2 className="font-bold text-xl">
+                          {testimonial.name}
+                        </h2>
                         <h4 className="text-primary font-semibold">
-                          {review.userDesignation}
+                          {testimonial.designation}
                         </h4>
                       </div>
                     </div>

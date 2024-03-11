@@ -15,6 +15,12 @@ const weCareApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getTestimonialsData: builder.query({
+      query: () => ({
+        url: "/testimonials",
+        method: "GET",
+      }),
+    }),
     getSingleFoodSupply: builder.query({
       query: (id) => ({
         url: `/supply/${id}`,
@@ -31,6 +37,15 @@ const weCareApi = baseApi.injectEndpoints({
         };
       },
       invalidatesTags: ["foods"],
+    }),
+    createTestimonial: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/create-testimonial",
+          method: "POST",
+          body: data,
+        };
+      },
     }),
     updateSingleSupply: builder.mutation({
       query: (options) => {
@@ -66,7 +81,9 @@ const weCareApi = baseApi.injectEndpoints({
 
 export const {
   useCreateFoodItemMutation,
+  useCreateTestimonialMutation,
   useGetFoodSuppliesQuery,
+  useGetTestimonialsDataQuery,
   useDeleteFoodSupplyMutation,
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,
