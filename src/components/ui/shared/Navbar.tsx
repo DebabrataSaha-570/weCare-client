@@ -31,36 +31,65 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/"> Home </Link>
+        <Link className="btn btn-ghost text-left btn-sm" to="/">
+          {" "}
+          Home{" "}
+        </Link>
       </li>
       <li>
-        <Link to="/all-supplies"> All Supplies </Link>
+        <Link className="btn btn-ghost text-left btn-sm" to="/all-supplies">
+          All Supplies
+        </Link>
+      </li>
+
+      <li>
+        <Link className="btn btn-ghost text-left btn-sm" to="/volunteer">
+          Volunteer Signup
+        </Link>
       </li>
 
       {auth?.token && (
         <>
           <li>
-            <Link to="/dashboard"> Dashboard </Link>
+            <Link className="btn btn-ghost text-left btn-sm" to="/dashboard">
+              {" "}
+              Dashboard{" "}
+            </Link>
           </li>
           <li>
-            <Link to="/"> {auth?.user?.name} </Link>
+            <Link className="btn btn-ghost text-left btn-sm" to="/">
+              {" "}
+              {auth?.user?.name}{" "}
+            </Link>
           </li>
 
           <li>
-            <button onClick={handleLogout}> Logout </button>
+            <button
+              className="btn btn-ghost text-left btn-sm"
+              onClick={handleLogout}
+            >
+              {" "}
+              Logout{" "}
+            </button>
           </li>
         </>
       )}
 
       {!auth.token && (
         <li>
-          <Link to="/login"> Login </Link>
+          <Link className="btn btn-ghost text-left btn-sm" to="/login">
+            {" "}
+            Login{" "}
+          </Link>
         </li>
       )}
       <li className="flex justify-center">
-        <span onClick={handleThemeChange} className="">
+        <span
+          onClick={handleThemeChange}
+          className="btn btn-ghost text-left btn-sm"
+        >
           {darkMode ? (
-            <PiSunBold className="size-5" />
+            <PiSunBold className=" size-5" />
           ) : (
             <FaRegMoon className="size-5" />
           )}
@@ -96,7 +125,7 @@ const Navbar = () => {
 
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content bg-secondary mt-3 p-2 shadow text-white rounded-box w-52"
+                className="menu menu-compact dropdown-content bg-secondary t mt-3 p-2 shadow text-white rounded-box w-52"
               >
                 {menuItems}
               </ul>
@@ -112,7 +141,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex ">
-            <ul className="menu menu-horizontal px-1  font-semibold text-white">
+            <ul className="menu  menu-horizontal  px-1  font-semibold text-white">
               {menuItems}
             </ul>
           </div>

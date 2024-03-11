@@ -13,6 +13,7 @@ import SignUp from "../pages/SignUp";
 import SupplyDetails from "../components/ui/home/SupplyDetails";
 import ProtectedRoute from "../components/layouts/ProtectedRoute";
 import CreateTestimonials from "../components/ui/dashboard/CreateTestimonials";
+import Volunteer from "../pages/Volunteer";
 
 const router = createBrowserRouter([
   {
@@ -45,11 +46,19 @@ const router = createBrowserRouter([
         path: "all-supplies",
         element: <AllSupplies></AllSupplies>,
       },
+      // {
+      //   path: "volunteer",
+      //   element: <Volunteer></Volunteer>,
+      // },
       {
         path: "supplies/:id",
         element: <SupplyDetails></SupplyDetails>,
       },
     ],
+  },
+  {
+    path: "/volunteer",
+    element: <Volunteer></Volunteer>,
   },
   {
     path: "/dashboard",

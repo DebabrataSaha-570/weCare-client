@@ -16,6 +16,7 @@ export default {
 
           "--color1": "#FFAC00",
           "--color2": "#FBF7F4",
+          "--color3": "#233038",
         },
       },
       {
