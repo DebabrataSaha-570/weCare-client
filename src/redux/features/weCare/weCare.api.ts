@@ -21,6 +21,12 @@ const weCareApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getVolunteersData: builder.query({
+      query: () => ({
+        url: "/volunteers",
+        method: "GET",
+      }),
+    }),
     getSingleFoodSupply: builder.query({
       query: (id) => ({
         url: `/supply/${id}`,
@@ -42,6 +48,15 @@ const weCareApi = baseApi.injectEndpoints({
       query: (data) => {
         return {
           url: "/create-testimonial",
+          method: "POST",
+          body: data,
+        };
+      },
+    }),
+    addVolunteer: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/add-volunteer",
           method: "POST",
           body: data,
         };
@@ -88,4 +103,6 @@ export const {
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,
   useGetNewsDataQuery,
+  useAddVolunteerMutation,
+  useGetVolunteersDataQuery,
 } = weCareApi;

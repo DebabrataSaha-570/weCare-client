@@ -14,7 +14,6 @@ type TSingleNews = {
 
 const LatestNews = () => {
   const { data } = useGetNewsDataQuery(null);
-  console.log("latest news data", data);
   return (
     <Container className="p-6 my-24">
       <motion.div

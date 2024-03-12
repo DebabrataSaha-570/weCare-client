@@ -43,7 +43,7 @@ const SignUp = () => {
       >
         <h3 className="text-center text-3xl  mb-3  font-serif">Sign Up</h3>
         <div className="card-body ">
-          <label className="input input-bordered flex items-center gap-2 mb-2">
+          <label className="input border border-gray-500 flex items-center gap-2 mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -91,7 +91,7 @@ const SignUp = () => {
           {errors.email && (
             <span className="text-red-500">{errors.email?.message}</span>
           )}
-          <label className="input input-bordered flex items-center gap-2 mb-2">
+          <label className="input border border-gray-500 flex items-center gap-2 mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

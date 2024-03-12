@@ -70,7 +70,7 @@ const Login = () => {
           {errors.email && (
             <span className="text-red-500">{errors.email?.message}</span>
           )}
-          <label className="input input-bordered flex items-center gap-2 mb-2">
+          <label className="input border border-gray-500 flex items-center gap-2 mb-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

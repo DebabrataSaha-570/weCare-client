@@ -48,6 +48,12 @@ const Navbar = () => {
         </Link>
       </li>
 
+      <li>
+        <Link className="btn btn-ghost text-left btn-sm" to="/about-us">
+          About Us
+        </Link>
+      </li>
+
       {auth?.token && (
         <>
           <li>

@@ -1,6 +1,8 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
 import image from "../../../assets/hand_reaching_out_2.jpg";
+import { useAddVolunteerMutation } from "../../../redux/features/weCare/weCare.api";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 type FormInputs = {
   volunteerFirstName: string;
@@ -16,6 +18,8 @@ type FormInputs = {
 };
 
 const VolunteerForm = () => {
+  const [addVolunteer, { data, isLoading, isError }] =
+    useAddVolunteerMutation();
   const {
     register,
     handleSubmit,
@@ -27,9 +31,23 @@ const VolunteerForm = () => {
     },
   });
 
+  const handleCancel = () => {
+    reset();
+  };
+
   const handleFormSubmit: SubmitHandler<FormInputs> = (formData) => {
     console.log("form data", formData);
+    addVolunteer(formData);
   };
+
+  useEffect(() => {
+    if (data) {
+      toast.success("Registration Completed Successfully");
+      reset();
+    } else if (isError) {
+      toast.error("Something Went wrong");
+    }
+  }, [data, isError, reset]);
   return (
     <section className="flex  w-full md:h-screen bg-[--color2]  rounded-md text-quickSand">
       <div className="hidden md:flex md:flex-1 relative">
@@ -39,7 +57,7 @@ const VolunteerForm = () => {
           alt="registration_image"
         />
 
-        <div className="absolute top-1 left-4 text-primary text-[--color3]">
+        <div className="absolute top-1 left-4  text-[--color3]">
           <div className=" text-2xl font-bold mb-3">
             <h2>Empowerment </h2>
             <h2>Through Service</h2>
@@ -53,14 +71,10 @@ const VolunteerForm = () => {
       </div>
 
       <div className="p-5 flex-[2]">
-        <div className="flex items-center justify-between">
+        <div className="">
           <h2 className="text-primary text-2xl font-bold">
             Volunteer Registration
           </h2>
-
-          <Link to="/" className="text-primary text-lg font-bold">
-            Home
-          </Link>
         </div>
         <p className="font-semibold text-base">
           Thank You for Your interest in voluteering with us! Please fill out
@@ -71,7 +85,7 @@ const VolunteerForm = () => {
 
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
-          className="mt-5 w-full max-w-[900px]"
+          className="mt-5 w-full "
         >
           <div className="flex-0 md:flex items-center gap-10">
             <label className="form-control w-full ">
@@ -108,12 +122,20 @@ const VolunteerForm = () => {
               </div>
               <input
                 type="email"
-                {...register("volunteerEmail", { required: true })}
+                {...register("volunteerEmail", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    message: "Enter a valid email",
+                  },
+                })}
                 placeholder="example@gmail.com"
                 className=" p-2 border border-gray-400  rounded-md w-full "
               />
               {errors.volunteerEmail && (
-                <span className="text-red-500">Email is required</span>
+                <span className="text-red-500">
+                  {errors.volunteerEmail?.message}
+                </span>
               )}
             </label>
           </div>
@@ -216,8 +238,7 @@ const VolunteerForm = () => {
                 <option value="Event Setup">Event Setup</option>
                 <option value="Registration Desk">Registration Desk</option>
                 <option value="Food Service">Food Service</option>
-                <option value="Clean-up Crew">Clean-up Crew</option>
-                <option value="Other">Other</option>
+                <option value="Clean Up">Clean-up Crew</option>
               </select>
               {errors.volunteerRole && (
                 <span className="text-red-500">volunteerRole is required</span>
@@ -245,15 +266,27 @@ const VolunteerForm = () => {
           </label>
 
           <div className="flex items-center gap-5">
-            <button className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-white transition duration-500  focus:bg-[--color1] focus:text-white rounded-md">
+            <button
+              onClick={handleCancel}
+              type="button"
+              className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-white transition duration-500   rounded-md"
+            >
               Cancel
             </button>
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-3 text-white font-semibold  text-base bg-primary px-5 py-2    hover:bg-[--color1] transition duration-700  focus:bg-[--color1] rounded-md "
-            >
-              Signup
-            </button>
+
+            {isLoading ? (
+              <button className="btn">
+                <span className="loading loading-spinner"></span>
+                loading
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="flex items-center justify-center  text-white font-semibold  text-base bg-primary px-5 py-2     hover:bg-[--color1] transition duration-700  focus:bg-[--color1] rounded-md "
+              >
+                Signup
+              </button>
+            )}
           </div>
         </form>
       </div>
