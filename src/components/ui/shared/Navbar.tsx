@@ -37,6 +37,11 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
+        <Link className="btn btn-ghost text-left btn-sm" to="/about-us">
+          About Us
+        </Link>
+      </li>
+      <li>
         <Link className="btn btn-ghost text-left btn-sm" to="/all-supplies">
           All Supplies
         </Link>
@@ -45,12 +50,6 @@ const Navbar = () => {
       <li>
         <Link className="btn btn-ghost text-left btn-sm" to="/volunteer">
           Volunteer Signup
-        </Link>
-      </li>
-
-      <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/about-us">
-          About Us
         </Link>
       </li>
 

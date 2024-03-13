@@ -1,11 +1,14 @@
-import Container from "../components/ui/Container";
+import Achievement from "../components/ui/aboutUs/Achievement";
+import Highlight from "../components/ui/aboutUs/Highlight";
 import VolunteersList from "../components/ui/aboutUs/volunteers/VolunteersList";
 
 const AboutUs = () => {
   return (
-    <Container className="p-5">
+    <div>
+      <Highlight></Highlight>
+      <Achievement></Achievement>
       <VolunteersList></VolunteersList>
-    </Container>
+    </div>
   );
 };
 
