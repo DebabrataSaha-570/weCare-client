@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useGetVolunteersDataQuery } from "../../../../redux/features/weCare/weCare.api";
 import SingleVolunteer from "./SingleVolunteer";
 import Container from "../../Container";
@@ -34,25 +33,14 @@ const VolunteersList = () => {
 
   return (
     <Container className="p-5">
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{
-          delay: 0.4,
-          y: { type: "spring", stiffness: 60 },
-          opacity: { duration: 0.2 },
-          ease: "easeIn",
-          duration: 1,
-        }}
-        className="text-center"
-      >
+      <div className="text-center">
         <h3 className="text-[--color1] text-xl md:text-3xl  mb-3 font-serif">
           Professional Team
         </h3>
         <h2 className="text-3xl md:text-4xl font-semibold">
           Meet Our Volunteer Team
         </h2>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-7 justify-items-center p-5">
         {data?.map((volunteer: TVolunteer) => (

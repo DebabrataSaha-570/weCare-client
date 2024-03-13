@@ -19,11 +19,6 @@ export default {
           "--color3": "#233038",
         },
       },
-      {
-        // dark: {
-        //   ...require("daisyui/src/theming/themes")["dark"],
-        // },
-      },
     ],
   },
 

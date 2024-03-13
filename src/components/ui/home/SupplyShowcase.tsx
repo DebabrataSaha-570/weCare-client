@@ -20,7 +20,7 @@ type TSupply = {
 };
 
 const SupplyShowcase = () => {
-  const { data, isError, isLoading } = useGetFoodSuppliesQuery(null);
+  const { data, isError, isLoading } = useGetFoodSuppliesQuery("");
 
   if (isLoading) {
     return (

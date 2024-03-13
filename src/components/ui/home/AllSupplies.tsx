@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useGetFoodSuppliesQuery } from "../../../redux/features/weCare/weCare.api";
 import Container from "../Container";
 import ProductCard from "../ProductCard";
@@ -17,7 +18,8 @@ type TSupply = {
 };
 
 const AllSupplies = () => {
-  const { data, isError, isLoading } = useGetFoodSuppliesQuery(null);
+  const [filter, setFilter] = useState("");
+  const { data, isError, isLoading } = useGetFoodSuppliesQuery(filter);
 
   if (isLoading) {
     return (
@@ -39,14 +41,17 @@ const AllSupplies = () => {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl md:text-3xl font-semibold">All Supply Items</h2>
 
-        <select className="select select-bordered w-full max-w-[13rem] bg-gray-600 text-white font-bold">
-          <option disabled selected>
-            Filter
-          </option>
+        <select
+          onChange={(e) => setFilter(e.target.value)}
+          className="select select-bordered w-full max-w-[13rem] bg-gray-600 text-white font-bold"
+        >
+          <option disabled>Filter</option>
           <option value="Food">Food</option>
           <option value="Hygiene">Hygiene Products</option>
           <option value="Baby">Baby Essentials</option>
-          <option value="">All</option>
+          <option selected value="">
+            All
+          </option>
         </select>
       </div>
 

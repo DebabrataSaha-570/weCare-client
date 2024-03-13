@@ -3,8 +3,8 @@ import { baseApi } from "../../api/api";
 const weCareApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getFoodSupplies: builder.query({
-      query: () => ({
-        url: "/supplies",
+      query: (category) => ({
+        url: `/supplies?category=${category}`,
         method: "GET",
       }),
       providesTags: ["foods"],
