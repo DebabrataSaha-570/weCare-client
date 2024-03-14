@@ -15,6 +15,7 @@ import ProtectedRoute from "../components/layouts/ProtectedRoute";
 import CreateTestimonials from "../components/ui/dashboard/CreateTestimonials";
 import Volunteer from "../pages/Volunteer";
 import AboutUs from "../pages/AboutUsPage";
+import Community from "../pages/Community";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "volunteer",
         element: <Volunteer></Volunteer>,
+      },
+      {
+        path: "community",
+        element: <Community></Community>,
       },
       {
         path: "supplies/:id",

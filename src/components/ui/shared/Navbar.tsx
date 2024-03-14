@@ -46,6 +46,11 @@ const Navbar = () => {
           All Supplies
         </Link>
       </li>
+      <li>
+        <Link className="btn btn-ghost text-left btn-sm" to="/community">
+          Community
+        </Link>
+      </li>
 
       <li>
         <Link className="btn btn-ghost text-left btn-sm" to="/volunteer">

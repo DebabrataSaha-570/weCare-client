@@ -20,12 +20,21 @@ const weCareApi = baseApi.injectEndpoints({
         url: "/testimonials",
         method: "GET",
       }),
+      providesTags: ["foods"],
     }),
     getVolunteersData: builder.query({
       query: () => ({
         url: "/volunteers",
         method: "GET",
       }),
+      providesTags: ["foods"],
+    }),
+    getGratitudesData: builder.query({
+      query: () => ({
+        url: "/gratitudes",
+        method: "GET",
+      }),
+      providesTags: ["foods"],
     }),
     getSingleFoodSupply: builder.query({
       query: (id) => ({
@@ -61,6 +70,16 @@ const weCareApi = baseApi.injectEndpoints({
           body: data,
         };
       },
+    }),
+    addGratitude: builder.mutation({
+      query: (data) => {
+        return {
+          url: "/add-gratitude",
+          method: "POST",
+          body: data,
+        };
+      },
+      invalidatesTags: ["foods"],
     }),
     updateSingleSupply: builder.mutation({
       query: (options) => {
@@ -99,10 +118,12 @@ export const {
   useCreateTestimonialMutation,
   useGetFoodSuppliesQuery,
   useGetTestimonialsDataQuery,
+  useGetGratitudesDataQuery,
   useDeleteFoodSupplyMutation,
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,
   useGetNewsDataQuery,
   useAddVolunteerMutation,
+  useAddGratitudeMutation,
   useGetVolunteersDataQuery,
 } = weCareApi;
