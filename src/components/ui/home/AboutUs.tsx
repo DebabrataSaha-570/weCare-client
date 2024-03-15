@@ -40,10 +40,10 @@ const AboutUs = () => {
             About Us
           </h5>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-5 leading-relaxed">
-            Helping Today. Helping Tommorow
+          <h2 className="text-3xl md:text-4xl font-semibold mb-5 leading-relaxed ">
+            Helping Today. Helping Tomorrow
           </h2>
-          <p className="leading-loose text-base  md:text-lg text-gray-500 mb-7">
+          <p className="leading-loose text-base  md:text-lg text-gray-500 mb-7 font-medium">
             Discover weCare, your global hub for positive change in food
             distribution and supplies management. Connecting nonprofits, donors,
             and companies worldwide, weCare aims to make a difference. From

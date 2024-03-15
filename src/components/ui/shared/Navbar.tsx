@@ -51,6 +51,11 @@ const Navbar = () => {
           Community
         </Link>
       </li>
+      <li>
+        <Link className="btn btn-ghost text-left btn-sm" to="/leaderboard">
+          Leaderboard
+        </Link>
+      </li>
 
       <li>
         <Link className="btn btn-ghost text-left btn-sm" to="/volunteer">

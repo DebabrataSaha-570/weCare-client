@@ -41,17 +41,17 @@ const SupplyDetails = () => {
           className=" rounded-lg  object-cover"
         />
         <h2 className="text-2xl font-semibold my-3">{data?.title}</h2>
-        <p className="text-lg">{data?.description}</p>
+        <p className="text-lg font-medium">{data?.description}</p>
         <div className="my-5">
           <table className="table border border-secondary text-base">
             <tbody>
               <tr>
-                <td className="text-primary font-bold">Category :</td>
-                <td>{data?.category}</td>
+                <td className="text-primary font-bold ">Category :</td>
+                <td className="font-medium">{data?.category}</td>
               </tr>
               <tr>
                 <td className="text-primary font-bold">Available Quantity :</td>
-                <td>
+                <td className="font-medium">
                   {data?.quantity?.quantity} {data.quantity.quantityUnit}
                 </td>
               </tr>

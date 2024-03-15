@@ -24,6 +24,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
   const [quantityUnit, setQuantityUnit] = useState("");
   const [donorName, setDonorName] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
+  const [donorImage, setDonorImage] = useState("");
 
   useEffect(() => {
     if (SingleSupplyData) {
@@ -35,6 +36,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
       setQuantityUnit(SingleSupplyData?.quantity?.quantityUnit);
       setDonorName(SingleSupplyData?.donorName);
       setDonorEmail(SingleSupplyData?.donorEmail);
+      setDonorImage(SingleSupplyData?.donorImage);
     }
   }, [SingleSupplyData]);
 
@@ -51,6 +53,7 @@ const Modal = ({ id, handleModalClose }: TModal) => {
         image,
         donorName,
         donorEmail,
+        donorImage,
       },
     };
     updateSingleSupply(updateData);
@@ -140,8 +143,15 @@ const Modal = ({ id, handleModalClose }: TModal) => {
             onChange={(e) => setDonorEmail(e.target.value)}
             type="text"
             placeholder="Donor Email Address"
-            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full "
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full mb-3"
             defaultValue={SingleSupplyData?.donorEmail || ""}
+          />
+          <input
+            onChange={(e) => setDonorImage(e.target.value)}
+            type="text"
+            placeholder="Donor Image URL"
+            className="rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full "
+            defaultValue={SingleSupplyData?.donorImage || ""}
           />
 
           <button type="submit" className="btn btn-secondary w-full mt-3">

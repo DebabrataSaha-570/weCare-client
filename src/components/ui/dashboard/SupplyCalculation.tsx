@@ -19,7 +19,7 @@ type TItem = {
 };
 
 const SupplyCalculation = () => {
-  const { data } = useGetFoodSuppliesQuery(null);
+  const { data } = useGetFoodSuppliesQuery("");
   const foodItems = data?.filter(
     (item: TItem) => item.category === "Food"
   )?.length;

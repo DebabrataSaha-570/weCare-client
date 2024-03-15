@@ -16,6 +16,7 @@ import CreateTestimonials from "../components/ui/dashboard/CreateTestimonials";
 import Volunteer from "../pages/Volunteer";
 import AboutUs from "../pages/AboutUsPage";
 import Community from "../pages/Community";
+import Leaderboard from "../pages/Leaderboard";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "community",
         element: <Community></Community>,
+      },
+      {
+        path: "leaderboard",
+        element: <Leaderboard></Leaderboard>,
       },
       {
         path: "supplies/:id",

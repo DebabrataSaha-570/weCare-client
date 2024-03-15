@@ -42,12 +42,12 @@ const AppreciationPosts = () => {
 
               <div>
                 <h2 className="text-xl font-semibold">{gratitude.Name}</h2>
-                <h3 className="text-base font-normal text-gray-500">
+                <h3 className="text-base  text-gray-500 font-medium">
                   {gratitude.Address}
                 </h3>
               </div>
             </div>
-            <h3 className=" px-5 py-2 text-gray-500 font-normal text-base">
+            <h3 className=" px-5 py-2 text-gray-500 font-medium text-base">
               {gratitude.Comments}
             </h3>
           </div>

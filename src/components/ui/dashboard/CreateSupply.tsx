@@ -17,6 +17,7 @@ const CreateSupply = () => {
   const [quantityUnit, setQuantityUnit] = useState("");
   const [donorName, setDonorName] = useState(auth.user?.name);
   const [donorEmail, setDonorEmail] = useState(auth.user?.email);
+  const [donorImage, setDonorImage] = useState("");
 
   const handleAddSupply = (e: FormEvent) => {
     e.preventDefault();
@@ -29,6 +30,7 @@ const CreateSupply = () => {
       image,
       donorName,
       donorEmail,
+      donorImage,
     };
 
     addFoodSupply(foodItem);
@@ -136,6 +138,15 @@ const CreateSupply = () => {
             defaultValue={auth.user?.email || donorEmail}
             type="text"
             placeholder="Donor Email"
+            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            required
+          />
+
+          <input
+            onChange={(e) => setDonorImage(e.target.value)}
+            defaultValue={donorImage}
+            type="text"
+            placeholder="Donor Image URL"
             className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
             required
           />

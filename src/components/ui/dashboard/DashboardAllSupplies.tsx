@@ -24,7 +24,7 @@ type TSupply = {
 };
 
 const DashboardAllSupplies = () => {
-  const { data, isError, isLoading } = useGetFoodSuppliesQuery(null);
+  const { data, isError, isLoading } = useGetFoodSuppliesQuery("");
   const [modalId, setModalId] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
