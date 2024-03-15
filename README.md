@@ -29,6 +29,11 @@ weCare is a web application designed to streamline the management and distributi
 - **Detailed Supply Information:** Each supply post displays image, title, category, quantity, and description.
 - **Dashboard:** Registered users have access to a dedicated dashboard for managing supplies and viewing statistics.
 - **Supply Statistics:** Pie chart visualization of supply data to aid informed decision-making.
+- **Dynamic Theme Switching:** Enable users to switch between different themes (e.g., light mode, dark mode) based on their preferences.
+- **Donors LeaderBoard: (”/leaderboard”)** There is a leaderBoard to showcase the top donors who have made significant contributions to the relief efforts.
+- **Community Gratitude Wall: (”/community”)** There is a community gratitude wall where users can post comments of appreciation for the support they've received during difficult times.
+- **Digital Volunteer Hub: (”/volunteer”)** There is a digital hub where users can discover and sign up for virtual volunteer opportunities.
+- **Interactive Testimonial : (”/dashboard/create-testimonial”)** Donors will be able to post testimonials about the donation posts.
 - **Animations:** Enhanced user experience through subtle animations (3-4) implemented with Framer Motion.
 
 ## How To Use
@@ -43,19 +48,19 @@ weCare is a web application designed to streamline the management and distributi
 1. **Clone the Repository:**
 
    ```
-   git clone https://github.com/Porgramming-Hero-web-course/l2-b2-assignment-6-fronten-DebabrataSaha-570.git
+   git clone https://github.com/DebabrataSaha-570/weCare-client.git
 
    ```
 
 2. **Install Dependencies:**
 
 ```
-cd weCare
+cd weCare-client
 npm install  # or yarn install
 
 ```
 
-2.  **Run the Application:**
+3.  **Run the Application:**
 
 ```
 npm start  # or yarn start
@@ -64,4 +69,4 @@ npm start  # or yarn start
 
 [Live Link](https://we-care-react.netlify.app/)
 
-You can see server side code in [weCare Server]()
+You can see server side code in [weCare Server](https://github.com/DebabrataSaha-570/weCare-server)
