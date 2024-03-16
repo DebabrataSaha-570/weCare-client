@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "../Container";
 import { GiFullPizza } from "react-icons/gi";
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
@@ -24,52 +24,97 @@ const Navbar = () => {
   useEffect(() => {
     const htmlElement = document.querySelector("html");
     if (htmlElement) {
-      // document.querySelector("html").setAttribute("data-theme", darkMode? 'dark' : 'light' );
-      htmlElement.setAttribute("data-theme", darkMode ? "dark" : "weEatTheme");
+      htmlElement.setAttribute(
+        "data-theme",
+        darkMode ? "halloween" : "weCareTheme"
+      );
     }
   }, [darkMode]);
   const menuItems = (
     <>
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+          }
+        >
           {" "}
           Home{" "}
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/about-us">
+        <NavLink
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+          }
+          to="/about-us"
+        >
           About Us
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/all-supplies">
+        <NavLink
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+          }
+          to="/all-supplies"
+        >
           All Supplies
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/community">
+        <NavLink
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${
+              isActive ? " text-primary " : ""
+            }`
+          }
+          to="/community"
+        >
           Community
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/leaderboard">
+        <NavLink
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${
+              isActive ? " text-primary " : ""
+            }`
+          }
+          to="/leaderboard"
+        >
           Leaderboard
-        </Link>
+        </NavLink>
       </li>
 
       <li>
-        <Link className="btn btn-ghost text-left btn-sm" to="/volunteer">
+        <NavLink
+          className={({ isActive }) =>
+            ` btn btn-ghost text-left btn-sm ${
+              isActive ? " text-primary " : ""
+            }`
+          }
+          to="/volunteer"
+        >
           Volunteer Signup
-        </Link>
+        </NavLink>
       </li>
 
       {auth?.token && (
         <>
           <li>
-            <Link className="btn btn-ghost text-left btn-sm" to="/dashboard">
+            <NavLink
+              className={({ isActive }) =>
+                ` btn btn-ghost text-left btn-sm ${
+                  isActive ? " text-primary " : ""
+                }`
+              }
+              to="/dashboard"
+            >
               {" "}
               Dashboard{" "}
-            </Link>
+            </NavLink>
           </li>
           <li>
             <Link className="btn btn-ghost text-left btn-sm" to="/">
@@ -92,10 +137,17 @@ const Navbar = () => {
 
       {!auth.token && (
         <li>
-          <Link className="btn btn-ghost text-left btn-sm" to="/login">
+          <NavLink
+            className={({ isActive }) =>
+              ` btn btn-ghost text-left btn-sm ${
+                isActive ? " text-primary " : ""
+              }`
+            }
+            to="/login"
+          >
             {" "}
             Login{" "}
-          </Link>
+          </NavLink>
         </li>
       )}
       <li className="flex justify-center">
@@ -120,7 +172,7 @@ const Navbar = () => {
             <div className="dropdown">
               <label
                 tabIndex={1}
-                className="btn btn-ghost text-white lg:hidden"
+                className="btn btn-ghost text-[--color4] lg:hidden"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +192,7 @@ const Navbar = () => {
 
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content bg-secondary t mt-3 p-2 shadow text-white rounded-box w-52"
+                className="menu menu-compact dropdown-content bg-secondary t mt-3 p-2 shadow text-[--color4] rounded-box w-52"
               >
                 {menuItems}
               </ul>
@@ -156,7 +208,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex ">
-            <ul className="menu  menu-horizontal  px-1  font-semibold text-white">
+            <ul className="menu  menu-horizontal  px-1  font-semibold text-[--color4]">
               {menuItems}
             </ul>
           </div>

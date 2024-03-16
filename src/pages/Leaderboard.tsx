@@ -3,6 +3,7 @@ import LeaderBoardTable from "../components/ui/leaderboard/LeaderBoardTable";
 import { useGetFoodSuppliesQuery } from "../redux/features/weCare/weCare.api";
 
 type TDonation = {
+  title: string;
   donorName: string;
   donorImage?: string;
   quantity: {
@@ -12,6 +13,8 @@ type TDonation = {
 };
 
 type TDonorRankings = {
+  title: string;
+  donationUnit: string;
   donorName: string;
   totalDonation: number;
   image?: string;
@@ -37,7 +40,9 @@ const Leaderboard = () => {
 
   const donorRankings: TDonorRankings[] = data?.map((donation: TDonation) => ({
     donorName: donation.donorName,
+    title: donation.title,
     totalDonation: parseFloat(donation.quantity.quantity),
+    donationUnit: donation.quantity.quantityUnit,
     image: donation.donorImage,
   }));
 
@@ -58,7 +63,7 @@ const Leaderboard = () => {
       <div className="overflow-x-auto">
         <table className="table  mt-10  px-10">
           {/* head */}
-          <thead className="bg-gray-300 text-base">
+          <thead className="bg-[--thead] text-base text-[--color8]">
             <tr className="">
               <th>Position</th>
               <th>Name</th>

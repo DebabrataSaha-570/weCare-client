@@ -20,7 +20,7 @@ const DashboardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4  w-72 min-h-full bg-secondary text-white mt-[60px] lg:mt-0">
+          <ul className="menu p-4  w-72 min-h-full bg-secondary text-[--color4] mt-[60px] lg:mt-0">
             {/* Sidebar content here */}
 
             <NavLink
@@ -28,7 +28,7 @@ const DashboardLayout = () => {
               end
               className={({ isActive }) =>
                 `px-4 py-3 text-base rounded-lg mb-3 ${
-                  isActive ? "bg-primary  text-white " : ""
+                  isActive ? "bg-primary  text-[--color4] " : ""
                 }`
               }
             >
@@ -45,7 +45,7 @@ const DashboardLayout = () => {
               to="/dashboard/supplies"
               className={({ isActive }) =>
                 ` px-4 py-3 text-base rounded-lg mb-3 ${
-                  isActive ? "bg-primary text-white" : ""
+                  isActive ? "bg-primary text-[--color4]" : ""
                 }`
               }
             >
@@ -62,7 +62,7 @@ const DashboardLayout = () => {
               to="/dashboard/create-supply"
               className={({ isActive }) =>
                 ` px-4 py-3 text-base rounded-lg mb-3 ${
-                  isActive ? "bg-primary text-white" : ""
+                  isActive ? "bg-primary text-[--color4]" : ""
                 }`
               }
             >
@@ -79,7 +79,7 @@ const DashboardLayout = () => {
               to="/dashboard/create-testimonial"
               className={({ isActive }) =>
                 ` px-4 py-3 text-base rounded-lg mb-3 ${
-                  isActive ? "bg-primary text-white" : ""
+                  isActive ? "bg-primary text-[--color4]" : ""
                 }`
               }
             >

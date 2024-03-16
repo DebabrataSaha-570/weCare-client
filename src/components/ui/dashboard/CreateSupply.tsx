@@ -61,14 +61,14 @@ const CreateSupply = () => {
       <div className="w-full md:max-w-[50%] mx-auto">
         <form
           onSubmit={handleAddSupply}
-          className="flex flex-col gap-4  mt-6 p-6 bg-gray-300 rounded-lg shadow-md "
+          className="flex flex-col gap-4  mt-6 p-6 bg-[--create_form] rounded-lg shadow-md "
         >
           <input
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             type="text"
             placeholder="Title"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full "
             required
           />
 
@@ -78,12 +78,12 @@ const CreateSupply = () => {
               value={quantity}
               type="number"
               placeholder="Quantity "
-              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+              className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             />
             <select
               onChange={(e) => setQuantityUnit(e.target.value)}
               name="selectedUnit"
-              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+              className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             >
               <option value={quantityUnit} disabled selected>
                 Select Units
@@ -96,7 +96,7 @@ const CreateSupply = () => {
 
           <select
             onChange={(e) => setCategory(e.target.value)}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
           >
             <option value={category} disabled selected>
               Select Category
@@ -111,7 +111,7 @@ const CreateSupply = () => {
             value={description}
             rows={3}
             placeholder="Description"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             required
           ></textarea>
 
@@ -120,7 +120,7 @@ const CreateSupply = () => {
             value={image}
             type="text"
             placeholder="Product Image URL"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             required
           />
 
@@ -129,7 +129,7 @@ const CreateSupply = () => {
             defaultValue={donorName}
             type="text"
             placeholder="Donor Name"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             required
           />
 
@@ -138,7 +138,7 @@ const CreateSupply = () => {
             defaultValue={auth.user?.email || donorEmail}
             type="text"
             placeholder="Donor Email"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             required
           />
 
@@ -147,7 +147,7 @@ const CreateSupply = () => {
             defaultValue={donorImage}
             type="text"
             placeholder="Donor Image URL"
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full"
             required
           />
 

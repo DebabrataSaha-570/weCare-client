@@ -124,7 +124,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Food Donation</h3>
                   <h4 className="text-xl">#Turkey</h4>
                 </div>
@@ -141,7 +141,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Rescue, Love, Save</h3>
                   <h4 className="text-xl">#Canada</h4>
                 </div>
@@ -158,7 +158,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Cloths Donation</h3>
                   <h4 className="text-xl">#Bangladesh</h4>
                 </div>
@@ -175,7 +175,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Blood Donation</h3>
                   <h4 className="text-xl">#Thailand</h4>
                 </div>
@@ -192,7 +192,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Food Donation</h3>
                   <h4 className="text-xl">#Ukraine </h4>
                 </div>
@@ -209,7 +209,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Cloths Donation</h3>
                   <h4 className="text-xl">#India</h4>
                 </div>
@@ -226,7 +226,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Food Donation</h3>
                   <h4 className="text-xl">#China</h4>
                 </div>
@@ -243,7 +243,7 @@ const Gallery = () => {
               />
 
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-                <div className="px-5 py-2 text-white font-bold text-quickSand">
+                <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Medicine Donation</h3>
                   <h4 className="text-xl">#USA</h4>
                 </div>

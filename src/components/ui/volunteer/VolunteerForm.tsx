@@ -49,7 +49,7 @@ const VolunteerForm = () => {
     }
   }, [data, isError, reset]);
   return (
-    <section className="flex  w-full md:h-screen bg-[--color2]  rounded-md text-quickSand">
+    <section className="flex  w-full md:h-screen bg-[--volunteer_form]  rounded-md text-quickSand">
       <div className="hidden md:flex md:flex-1 relative">
         <img
           src={image}
@@ -96,7 +96,7 @@ const VolunteerForm = () => {
                 type="text"
                 {...register("volunteerFirstName", { required: true })}
                 placeholder="Type here"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerFirstName && (
                 <span className="text-red-500">First Name is required</span>
@@ -110,7 +110,7 @@ const VolunteerForm = () => {
                 type="text"
                 {...register("volunteerLastName", { required: true })}
                 placeholder="Type here"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerLastName && (
                 <span className="text-red-500">Last Name is required</span>
@@ -130,7 +130,7 @@ const VolunteerForm = () => {
                   },
                 })}
                 placeholder="example@gmail.com"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerEmail && (
                 <span className="text-red-500">
@@ -149,7 +149,7 @@ const VolunteerForm = () => {
                 type="number"
                 {...register("volunteerNumber", { required: true })}
                 placeholder="+88015555555"
-                className=" p-2 border border-gray-400  rounded-md w-full"
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerNumber && (
                 <span className="text-red-500">Phone Number is required</span>
@@ -163,7 +163,7 @@ const VolunteerForm = () => {
                 type="text"
                 {...register("volunteerAddress", { required: true })}
                 placeholder="Thana, Upozila, Zila"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerAddress && (
                 <span className="text-red-500">Address is required</span>
@@ -178,7 +178,7 @@ const VolunteerForm = () => {
                 type="number"
                 {...register("volunteerPostalCode", { required: true })}
                 placeholder="3821"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerPostalCode && (
                 <span className="text-red-500">Postal Code is required</span>
@@ -197,7 +197,7 @@ const VolunteerForm = () => {
                 type="text"
                 {...register("volunteerLinkedin", { required: true })}
                 placeholder="https://www.linkedin.com/feed/"
-                className=" p-2 border border-gray-400  rounded-md w-full "
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerLinkedin && (
                 <span className="text-red-500">
@@ -214,7 +214,7 @@ const VolunteerForm = () => {
                 type="text"
                 {...register("volunteerPhoto", { required: true })}
                 placeholder="https://pqrst.org/IwfNREx.png"
-                className=" p-2 border border-gray-400  rounded-md w-full"
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
               />
               {errors.volunteerPhoto && (
                 <span className="text-red-500">Photo is required</span>
@@ -229,7 +229,7 @@ const VolunteerForm = () => {
               </div>
               <select
                 // onChange={(e) => setQuantityUnit(e.target.value)}
-                className=" rounded-md p-2  border border-gray-400 w-full"
+                className=" rounded-md p-2  border border-[--color5] w-full bg-transparent"
                 {...register("volunteerRole", { required: true })}
               >
                 <option value="" disabled selected>
@@ -256,7 +256,7 @@ const VolunteerForm = () => {
               {...register("volunteerComments", { required: true })}
               rows={3}
               placeholder="Description"
-              className=" rounded-md p-2  border border-gray-400 w-full"
+              className=" rounded-md p-2  border border-[--color5] w-full bg-transparent"
             ></textarea>
             {errors.volunteerComments && (
               <span className="text-red-500">
@@ -269,7 +269,7 @@ const VolunteerForm = () => {
             <button
               onClick={handleCancel}
               type="button"
-              className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-white transition duration-500   rounded-md"
+              className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-[--color4] transition duration-500   rounded-md"
             >
               Cancel
             </button>
@@ -282,7 +282,7 @@ const VolunteerForm = () => {
             ) : (
               <button
                 type="submit"
-                className="flex items-center justify-center  text-white font-semibold  text-base bg-primary px-5 py-2     hover:bg-[--color1] transition duration-700  focus:bg-[--color1] rounded-md "
+                className="flex items-center justify-center  text-[--color4] font-semibold  text-base bg-primary px-5 py-2 hover:bg-[--color1] transition duration-700  focus:bg-[--color1] rounded-md "
               >
                 Signup
               </button>

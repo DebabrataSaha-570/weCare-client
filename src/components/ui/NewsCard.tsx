@@ -37,7 +37,7 @@ const NewsCard = ({ singleNews }: cardProps) => {
           alt={title}
         />
 
-        <p className="text-sm absolute top-4 left-5 bg-primary px-3 rounded-full font-semibold text-white py-1">
+        <p className="text-sm absolute top-4 left-5 bg-primary px-3 rounded-full font-semibold text-[--color4] py-1">
           {category}
         </p>
       </div>
@@ -48,18 +48,18 @@ const NewsCard = ({ singleNews }: cardProps) => {
         <h2 className="text-2xl font-semibold hover:text-[--color1] cursor-pointer drop-shadow-md transition duration-500 ">
           {title}
         </h2>
-        <hr className="mt-5 border border-gray-200" />
+        <hr className="mt-5 border border-[--color7" />
       </div>
 
       <div className="px-6 flex justify-between items-center cursor-pointer">
         <div className="flex items-center">
           <IoPersonOutline className="text-lg text-primary mr-2" />
-          <p className="uppercase text-gray-500 font-semibold text-base">
+          <p className="uppercase text-[--color6] font-semibold text-base">
             By Developers
           </p>
         </div>
         <span>
-          <IoShareSocialSharp className="text-base text-gray-500" />
+          <IoShareSocialSharp className="text-base text-[--color6]" />
         </span>
       </div>
     </motion.div>

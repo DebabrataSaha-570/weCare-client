@@ -42,7 +42,7 @@ const GratitudeForm = () => {
     <div>
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="p-6 shadow-lg bg-[--color2]"
+        className="p-6 shadow-lg bg-[--color2] rounded-lg"
       >
         <h3 className="text-center text-xl text-primary font-bold">
           Gratitude Form
@@ -55,7 +55,7 @@ const GratitudeForm = () => {
             type="text"
             {...register("Name", { required: true })}
             placeholder="write your Name here"
-            className=" p-2 border border-gray-400  rounded-md w-full "
+            className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
           />
           {errors.Name && (
             <span className="text-red-500"> Name is required</span>
@@ -76,7 +76,7 @@ const GratitudeForm = () => {
               },
             })}
             placeholder="example@gmail.com"
-            className=" p-2 border border-gray-400  rounded-md w-full "
+            className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
           />
           {errors.Email && (
             <span className="text-red-500">{errors.Email?.message}</span>
@@ -91,7 +91,7 @@ const GratitudeForm = () => {
             type="text"
             {...register("Address", { required: true })}
             placeholder="Chowmuhani, Noakhali , Bangladesh"
-            className=" p-2 border border-gray-400  rounded-md w-full "
+            className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
           />
           {errors.Address && (
             <span className="text-red-500">Address is required</span>
@@ -105,7 +105,7 @@ const GratitudeForm = () => {
             type="text"
             {...register("Image", { required: true })}
             placeholder="https://pqrst.org/IwfNREx.png"
-            className=" p-2 border border-gray-400  rounded-md w-full "
+            className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent "
           />
           {errors.Image && (
             <span className="text-red-500">Image Url is required</span>
@@ -120,7 +120,7 @@ const GratitudeForm = () => {
             {...register("Comments", { required: true })}
             rows={3}
             placeholder="Description"
-            className=" rounded-md p-2  border border-gray-400 w-full"
+            className=" rounded-md p-2  border border-[--color5] w-full bg-transparent"
           ></textarea>
           {errors.Comments && (
             <span className="text-red-500">
@@ -133,7 +133,7 @@ const GratitudeForm = () => {
           <button
             onClick={handleCancel}
             type="button"
-            className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-white transition duration-500   rounded-md"
+            className="items-center  text-base font-semibold bg-transparent px-5 py-2  border-2 border-[--color1]   hover:bg-[--color1] hover:text-[--color4] transition duration-500   rounded-md"
           >
             Cancel
           </button>
@@ -146,7 +146,7 @@ const GratitudeForm = () => {
           ) : (
             <button
               type="submit"
-              className="flex items-center justify-center  text-white font-semibold  text-base bg-primary px-5 py-2     hover:bg-[--color1] transition duration-700  rounded-md "
+              className="flex items-center justify-center  text-[--color4] font-semibold  text-base bg-primary px-5 py-2  hover:bg-[--color1] transition duration-700  rounded-md "
             >
               Add
             </button>

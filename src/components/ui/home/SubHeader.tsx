@@ -32,7 +32,7 @@ const SubHeader = () => {
           </span>
           <div>
             <h4 className="text-xl font-semibold mb-3">Healthy Food</h4>
-            <p className="text-gray-500  font-medium">
+            <p className="text-[--color6]  font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need to become more.
             </p>
@@ -58,7 +58,7 @@ const SubHeader = () => {
           </span>
           <div>
             <h4 className="text-xl font-semibold mb-3">Clean Water</h4>
-            <p className="text-gray-500 font-medium">
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need to become more.
             </p>
@@ -84,7 +84,7 @@ const SubHeader = () => {
           </span>
           <div>
             <h4 className="text-xl font-semibold mb-3">Medical Help</h4>
-            <p className="text-gray-500 font-medium">
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need to become more.
             </p>
@@ -110,7 +110,7 @@ const SubHeader = () => {
           </span>
           <div>
             <h4 className="text-xl font-semibold mb-3">Education</h4>
-            <p className="text-gray-500 font-medium">
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need to become more.
             </p>

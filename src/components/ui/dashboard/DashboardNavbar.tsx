@@ -3,13 +3,33 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "../../../redux/hook";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../../redux/features/auth/authSlice";
+import { useEffect } from "react";
+import { themeChange } from "../../../redux/features/theme/themeSlice";
+import { PiSunBold } from "react-icons/pi";
+import { FaRegMoon } from "react-icons/fa";
 
 const DashboardNavbar = () => {
   const auth = useAppSelector((state) => state.auth);
+  const { darkMode } = useAppSelector((state) => state.theme);
+
   const dispatch = useDispatch();
+
+  const handleThemeChange = () => {
+    dispatch(themeChange());
+  };
+
   const handleLogout = () => {
     dispatch(logOut());
   };
+  useEffect(() => {
+    const htmlElement = document.querySelector("html");
+    if (htmlElement) {
+      htmlElement.setAttribute(
+        "data-theme",
+        darkMode ? "halloween" : "weCareTheme"
+      );
+    }
+  }, [darkMode]);
 
   const menuItems = (
     <>
@@ -23,6 +43,18 @@ const DashboardNavbar = () => {
 
       <li>
         <button onClick={handleLogout}> Logout </button>
+      </li>
+      <li className="flex justify-center">
+        <span
+          onClick={handleThemeChange}
+          className="btn btn-ghost text-left btn-sm"
+        >
+          {darkMode ? (
+            <PiSunBold className=" size-5" />
+          ) : (
+            <FaRegMoon className="size-5" />
+          )}
+        </span>
       </li>
     </>
   );
@@ -50,7 +82,7 @@ const DashboardNavbar = () => {
 
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary text-white rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary text-[--color4] rounded-box w-52"
             >
               {menuItems}
             </ul>
@@ -66,7 +98,7 @@ const DashboardNavbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1 text-white text-[15px]">
+          <ul className="menu menu-horizontal px-1 text-[--color4] text-[15px]">
             {menuItems}
           </ul>
         </div>

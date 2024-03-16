@@ -133,14 +133,14 @@ const Testimonials = () => {
               <div key={testimonial._id}>
                 <div className="card   bg-[--color2] mx-2">
                   <div className="card-body text-quickSand">
-                    <p className="text-lg text-gray-500 font-semibold">
+                    <p className="text-lg text-[--color6] font-semibold">
                       {testimonial.testimonial}
                     </p>
 
                     <div>
-                      <p className="text-gray-500 font-bold">
+                      <p className="text-[--color6] font-bold">
                         Donation :{" "}
-                        <span className="text-black font-bold">
+                        <span className="text-[--color8] font-bold">
                           {" "}
                           {testimonial.supply}, {testimonial.quantity}{" "}
                           {testimonial.unit}{" "}

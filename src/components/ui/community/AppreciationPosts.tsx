@@ -24,11 +24,12 @@ const AppreciationPosts = () => {
   }
   return (
     <section>
-      {/* <h3 className="text-center text-xl text-primary font-bold">Posts</h3> */}
-
       <div>
         {data?.map((gratitude: TGratitude) => (
-          <div className="shadow-lg p-10 rounded-lg" key={gratitude._id}>
+          <div
+            className="shadow-lg bg-[--card_background] p-10 rounded-lg mb-5"
+            key={gratitude._id}
+          >
             <div className="flex gap-5">
               <div className="avatar mb-3">
                 <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -42,12 +43,12 @@ const AppreciationPosts = () => {
 
               <div>
                 <h2 className="text-xl font-semibold">{gratitude.Name}</h2>
-                <h3 className="text-base  text-gray-500 font-medium">
+                <h3 className="text-base  text-[--color6] font-medium">
                   {gratitude.Address}
                 </h3>
               </div>
             </div>
-            <h3 className=" px-5 py-2 text-gray-500 font-medium text-base">
+            <h3 className=" px-5 py-2 text-[--color6] font-medium text-base">
               {gratitude.Comments}
             </h3>
           </div>

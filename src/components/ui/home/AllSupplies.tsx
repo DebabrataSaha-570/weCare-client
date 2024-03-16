@@ -43,7 +43,7 @@ const AllSupplies = () => {
 
         <select
           onChange={(e) => setFilter(e.target.value)}
-          className="select select-bordered w-full max-w-[13rem] bg-gray-600 text-white font-bold"
+          className="select select-bordered w-full max-w-[13rem] bg-[--filter_background] text-[--color4] font-bold"
         >
           <option disabled>Filter</option>
           <option value="Food">Food</option>

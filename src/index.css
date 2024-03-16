@@ -4,6 +4,10 @@
 
 .slick-slider {
   position: relative;
+  /* margin: 0 !important; //slider is taking unnecessary space, I don't know why
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: aqua; */
 }
 .slick-arrow.slick-prev,
 .slick-arrow.slick-next {

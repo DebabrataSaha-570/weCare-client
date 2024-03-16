@@ -45,7 +45,7 @@ const SingleVolunteer = ({ volunteer }: TVolunteerProps) => {
       <div
         onMouseEnter={startHoverAnimation}
         onMouseLeave={endHoverAnimation}
-        className="card w-96 bg-base-100 shadow-xl group cursor-pointer overflow-hidden"
+        className="card w-96 bg-[--card_background] shadow-xl group cursor-pointer overflow-hidden"
       >
         <figure>
           <img
@@ -64,29 +64,29 @@ const SingleVolunteer = ({ volunteer }: TVolunteerProps) => {
           className="absolute top-[60%] right-0 "
         >
           <p className="flex items-center gap-3 bg-primary p-1 rounded-l-full">
-            <span className=" bg-white rounded-full p-3">
+            <span className=" bg-[--color4] rounded-full p-3">
               <FaShareAlt className="text-xl text-primary " />
             </span>
             <a
               data-tip={volunteerEmail}
               target="_blank "
-              className="rounded-full border border-white p-2 tooltip hover:tooltip-secondary cursor-pointer"
+              className="rounded-full border border-[--color4] p-2 tooltip hover:tooltip-secondary cursor-pointer"
             >
-              <IoMdMail className="text-base text-white" />
+              <IoMdMail className="text-base text-[--color4]" />
             </a>
             <a
               data-tip={volunteerNumber}
               target="_blank "
-              className="rounded-full border border-white p-2 tooltip hover:tooltip-secondary cursor-pointer"
+              className="rounded-full border border-[--color4] p-2 tooltip hover:tooltip-secondary cursor-pointer"
             >
-              <FaPhoneAlt className="text-base text-white" />
+              <FaPhoneAlt className="text-base text-[--color4]" />
             </a>
             <a
               href={volunteerLinkedin}
               target="_blank "
-              className="rounded-full border border-white p-2   cursor-pointer mr-2"
+              className="rounded-full border border-[--color4] p-2   cursor-pointer mr-2"
             >
-              <FaLinkedinIn className="text-base text-white " />
+              <FaLinkedinIn className="text-base text-[--color4] " />
             </a>
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ const SingleVolunteer = ({ volunteer }: TVolunteerProps) => {
           </h2>
           <hr />
           <div className="card-actions">
-            <p className="text-base text-gray-500 font-semibold">
+            <p className="text-base text-[--color6] font-semibold">
               {volunteerRole} Volunteer
             </p>
           </div>

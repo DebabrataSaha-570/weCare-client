@@ -18,7 +18,7 @@ const Footer = () => {
     <>
       <footer className="bg-secondary pt-20 px-16 md:px-20 pb-10">
         <Container className="mt-5 ">
-          <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-white pb-8  ">
+          <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-[--color4] pb-8  ">
             <div className="">
               <Link
                 to="/"
@@ -187,13 +187,13 @@ const Footer = () => {
             </div>
           </section>
           {/* sub footer */}
-          <section className="text-white">
-            <hr className="border-b-1 border-gray-400" />
+          <section className="text-[--color4]">
+            <hr className="border-b-1 border-[--color5]" />
 
             <div className="py-3 flex flex-col md:flex-row justify-between">
               <div className="flex gap-3 mb-3 md:mb-0">
                 <p>Term of use</p>
-                <span className="border border-r-gray-500"></span>
+                <span className="border border-r-[--color5]"></span>
                 <p>Privacy Environment Policy</p>
               </div>
 

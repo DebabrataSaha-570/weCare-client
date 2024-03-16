@@ -93,7 +93,7 @@ const DashboardAllSupplies = () => {
         <div className="overflow-x-auto rounded-lg shadow-sm mt-6">
           <table className="table ">
             {/* head */}
-            <thead className="bg-gray-300 text-base">
+            <thead className="bg-[--thead] text-base text-[--color8]">
               <tr className="">
                 <th></th>
                 <th className="">Title</th>
@@ -114,7 +114,7 @@ const DashboardAllSupplies = () => {
                   </td>
                   <td className="flex">
                     <button
-                      className="btn btn-warning text-white  mx-3"
+                      className="btn btn-warning text-[--color4]  mx-3"
                       onClick={() => handleModalOpen(supply?._id)}
                     >
                       <FaPenToSquare />
@@ -127,7 +127,7 @@ const DashboardAllSupplies = () => {
                     )}
                     <button
                       onClick={() => handleDelete(supply?._id)}
-                      className="btn btn-error text-white "
+                      className="btn btn-error text-[--color4] "
                     >
                       <FaTrashCan />
                     </button>

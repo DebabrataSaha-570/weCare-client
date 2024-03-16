@@ -37,13 +37,13 @@ const CreateTestimonials = () => {
       <div className="w-full md:max-w-[50%] mx-auto">
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
-          className="flex flex-col gap-4  mt-6 p-6 bg-gray-300 rounded-lg shadow-md "
+          className="flex flex-col gap-4  mt-6 p-6 bg-[--create_form] rounded-lg shadow-md "
         >
           <input
             type="text"
             placeholder="Donor Name"
             {...register("name", { required: true })}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border border-[--color8] w-full "
             required
           />
 
@@ -51,7 +51,7 @@ const CreateTestimonials = () => {
             type="text"
             placeholder="Donor Designation"
             {...register("designation", { required: true })}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8] w-full"
             required
           />
 
@@ -59,7 +59,7 @@ const CreateTestimonials = () => {
             type="text"
             placeholder="Donor Image URL"
             {...register("image", { required: true })}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8] w-full"
             required
           />
 
@@ -67,7 +67,7 @@ const CreateTestimonials = () => {
             type="text"
             placeholder="Supply Item"
             {...register("supply", { required: true })}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8] w-full"
             required
           />
 
@@ -76,10 +76,10 @@ const CreateTestimonials = () => {
               type="number"
               placeholder="Quantity "
               {...register("quantity", { required: true })}
-              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+              className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8] w-full"
             />
             <select
-              className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black w-full"
+              className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8] w-full"
               {...register("unit", { required: true })}
             >
               <option disabled>Select Units</option>
@@ -93,7 +93,7 @@ const CreateTestimonials = () => {
             placeholder="Testimonial"
             {...register("testimonial", { required: true })}
             rows={3}
-            className=" rounded-md p-3 focus:ring focus:ring-gray-500 border border-black  w-full "
+            className=" rounded-md p-3 focus:ring focus:ring-[--color6] border  border-[--color8]  w-full "
             required
           ></textarea>
 

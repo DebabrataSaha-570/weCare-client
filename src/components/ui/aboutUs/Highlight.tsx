@@ -13,64 +13,70 @@ const Highlight = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center text-center mt-10">
-          <div className="hover:bg-white rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
+          <div className="hover:bg-[--icon_Hover] rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
             <img
-              className="bg-[#FEEDE8] rounded-full p-3 mx-auto "
+              className="bg-[--icon1_Highlight] rounded-full p-3 mx-auto "
               width="80"
               height="80"
               src="https://img.icons8.com/dotty/80/ec491e/graduation-cap.png"
               alt="graduation-cap"
             />
 
-            <h3 className="text-black font-semibold text-xl my-3">
+            <h3 className="text-[--color8] font-semibold text-xl my-3">
               We Educate
             </h3>
-            <p className="text-gray-500 font-medium">
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need
             </p>
           </div>
-          <div className="hover:bg-white rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
+          <div className="hover:bg-[--icon_Hover] rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
             <img
-              className="bg-[#e9cc8a2e] rounded-full p-3 mx-auto "
+              className="bg-[--icon2_Highlight] rounded-full p-3 mx-auto "
               width="80"
               height="80"
               src="https://img.icons8.com/dotty/80/ffb00c/hand-with-pen.png"
               alt="hand-with-pen"
             />
 
-            <h3 className="text-black font-semibold text-xl my-3">We Help</h3>
-            <p className="text-gray-500 font-medium">
+            <h3 className="text-[--color8] font-semibold text-xl my-3">
+              We Help
+            </h3>
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need
             </p>
           </div>
-          <div className="hover:bg-white rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
+          <div className="hover:bg-[--icon_Hover] rounded-lg px-3 py-10 transition duration-700 hover:shadow-lg cursor-pointer">
             <img
-              className="bg-[#EAF8FC] rounded-full p-3 mx-auto "
+              className="bg-[--icon3_Highlight] rounded-full p-3 mx-auto "
               width="80"
               height="80"
               src="https://img.icons8.com/ios/50/33b8e4/bell.png"
               alt="bell"
             />
 
-            <h3 className="text-black font-semibold text-xl my-3">We Build</h3>
-            <p className="text-gray-500 font-medium">
+            <h3 className="text-[--color8] font-semibold text-xl my-3">
+              We Build
+            </h3>
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need
             </p>
           </div>
-          <div className="hover:bg-white rounded-lg px-3 py-10 transition-ease duration-500 hover:shadow-lg cursor-pointer">
+          <div className="hover:bg-[--icon_Hover] rounded-lg px-3 py-10 transition-ease duration-500 hover:shadow-lg cursor-pointer">
             <img
-              className="bg-[#EAFBF3] rounded-full p-3 mx-auto "
+              className="bg-[--icon4_Highlight] rounded-full p-3 mx-auto "
               width="80"
               height="80"
               src="https://img.icons8.com/carbon-copy/100/2fd388/books.png"
               alt="books"
             />
 
-            <h3 className="text-black font-semibold text-xl my-3">We Donate</h3>
-            <p className="text-gray-500 font-medium">
+            <h3 className="text-[--color8] font-semibold text-xl my-3">
+              We Donate
+            </h3>
+            <p className="text-[--color6] font-medium">
               We help local nonprofits access the funding, tools, training, and
               support they need
             </p>

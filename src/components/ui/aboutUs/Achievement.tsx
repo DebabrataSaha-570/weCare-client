@@ -2,7 +2,7 @@ import Container from "../Container";
 
 const Achievement = () => {
   return (
-    <Container className="p-14 bg-white rounded-lg mt-[-40px] shadow-lg mb-10 ">
+    <Container className="p-14 bg-[--icon_Hover] rounded-lg mt-[-40px] shadow-lg mb-10 ">
       <section className="grid grid-cols-1 gap-10 md:grid-cols-4 mx-10">
         <div className="flex gap-5">
           <h1 className="text-5xl text-primary font-bold">35</h1>
