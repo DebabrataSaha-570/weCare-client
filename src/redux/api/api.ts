@@ -5,7 +5,6 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/api/v1",
     // baseUrl: "https://wecare-server.vercel.app/api/v1",
-    // baseUrl: "https://we-care-server-beta.vercel.app/api/v1",
     credentials: "include",
   }),
   tagTypes: ["foods"],

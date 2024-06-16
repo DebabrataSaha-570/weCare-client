@@ -23,7 +23,9 @@ const SignUp = () => {
   } = useForm<FormInputs>();
 
   const handleFormSubmit: SubmitHandler<FormInputs> = (data) => {
-    createUser(data);
+    const modifiedData = { ...data, role: "user" };
+    console.log("modified data", modifiedData);
+    createUser(modifiedData);
   };
 
   useEffect(() => {
