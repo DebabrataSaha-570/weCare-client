@@ -21,6 +21,8 @@ const AllSupplies = () => {
   const [filter, setFilter] = useState("");
   const { data, isError, isLoading } = useGetFoodSuppliesQuery(filter);
 
+  console.log(data);
+
   if (isLoading) {
     return (
       <div className="w-full h-screen flex justify-center items-center">

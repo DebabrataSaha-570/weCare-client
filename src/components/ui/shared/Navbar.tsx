@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import Container from "../Container";
 import { GiFullPizza } from "react-icons/gi";
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
 import { logOut } from "../../../redux/features/auth/authSlice";
@@ -166,7 +165,7 @@ const Navbar = () => {
   );
   return (
     <nav className="bg-secondary shadow-md sticky top-0 z-50">
-      <Container>
+      <section className="px-5">
         <div className="navbar flex justify-between">
           <div className="navbar-start">
             <div className="dropdown">
@@ -213,7 +212,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </Container>
+      </section>
     </nav>
   );
 };

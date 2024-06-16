@@ -1,0 +1,192 @@
+[{
+  "_id": {
+    "$oid": "65e82f5edb946cd045b63cf8"
+  },
+  "title": "Basmati Rice",
+  "category": "Food",
+  "quantity": {
+    "quantity": "500",
+    "quantityUnit": "kg"
+  },
+  "description": "We are grateful to have received a generous donation of 100 kilograms of Noor Jahan Basmati Rice from Noakhali. This high-quality rice, sourced with care, is now ready for distribution through our platform. It will play a crucial role in providing nutritious meals and essential supplies to communities in need.",
+  "image": "https://i.imgur.com/9RnqPbZ.png",
+  "donorName": "Emily Johnson",
+  "donorEmail": "emilyJohnson@gmail.com",
+  "donorImage": "https://i.imgur.com/IwfNREx.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e8389fdb946cd045b63cf9"
+  },
+  "title": "Hand Wash (200ml)",
+  "category": "Hygiene",
+  "quantity": {
+    "quantity": "1000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're thrilled to announce another generous donation! We've received 500 (200ml) PC Lifebuoy hand wash units from Dhaka.\nThis donation will play a vital role in supporting our efforts to provide essential hygiene supplies to communities in need.",
+  "image": "https://i.imgur.com/wduZ6Xw.png",
+  "donorName": "Alex Turner",
+  "donorEmail": "alex@gmail.com",
+  "donorImage": "https://i.imgur.com/FEXE2le.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e83b5edb946cd045b63cfa"
+  },
+  "title": "Baby Diaper Pant",
+  "category": "Baby",
+  "quantity": {
+    "quantity": "2000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We've received a generous contribution of 200 Smile Baby Diaper Pants from Feni. This donation will be a huge help to families in need within our community.\n\nDiapers are an essential expense for parents of young children, and this contribution will alleviate some of that burden for many families. With 200 diapers, we can support a significant number of babies and ensure they have the comfort and hygiene they deserve. We are incredibly grateful for this thoughtful donation!",
+  "image": "https://i.imgur.com/54nso4i.png",
+  "donorName": "Sophie King",
+  "donorEmail": "sophie@gmail.com",
+  "donorImage": "https://i.imgur.com/XJwm3T2.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e86fe0463be04d3fbc70ce"
+  },
+  "title": "Mosur Dal",
+  "category": "Food",
+  "quantity": {
+    "quantity": "350",
+    "quantityUnit": "kg"
+  },
+  "description": "We're delighted to announce a fantastic donation – a whopping 150 kg of  Masoor Dal! This generous contribution will provide a nutritious staple to families in need within our community.\n\nMasoor dal, also known as red lentils, are a rich source of protein and fiber.  They're a budget-friendly and versatile ingredient, perfect for making healthy and delicious meals. This donation of 150 kg will ensure a significant number of families have access to this essential food item. We are incredibly grateful to the donor for their thoughtful generosity!",
+  "image": "https://i.imgur.com/th8O4KA.png",
+  "donorName": "Sophia Patel",
+  "donorEmail": "sophiapatel@gmail.com",
+  "donorImage": "https://i.imgur.com/bUG8bYE.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e870fd463be04d3fbc70cf"
+  },
+  "title": "Toothpaste (45gm)",
+  "category": "Hygiene",
+  "quantity": {
+    "quantity": "1000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're brushing with joy thanks to a fantastic donation of 100 Pepsodent toothpaste tubes, each containing 45 grams! This generous contribution will provide essential oral care supplies to families in our community.\n\nPepsodent toothpaste helps promote healthy teeth and fresh breath. With 100 tubes, this donation will ensure a significant number of people can benefit from this important hygiene product. We are incredibly grateful to the donor for their thoughtful contribution, helping smiles stay bright and healthy in our community!",
+  "image": "https://i.imgur.com/wOnab7w.png",
+  "donorName": "Emma Kim",
+  "donorEmail": "emmakim@gmail.com",
+  "donorImage": "https://i.imgur.com/gbJmUPP.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e871b3463be04d3fbc70d0"
+  },
+  "title": "Baby Lotion - 100 ml",
+  "category": "Baby",
+  "quantity": {
+    "quantity": "1300",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're thrilled to announce a shower of softness with a fantastic donation of 300 Meril Baby Lotion bottles, each containing 100 ml! This generous contribution will be a huge help to families with young children in our community.\n\nMeril Baby Lotion is specially formulated to gently nourish and protect delicate baby skin. With 300 bottles, this donation will ensure a significant number of babies can benefit from this soothing lotion. We are incredibly grateful to the donor for their thoughtful gift, helping to keep little ones' skin healthy and comfortable!",
+  "image": "https://i.imgur.com/9PCHUec.png",
+  "donorName": "Olivia Li",
+  "donorEmail": "oliviali@gmail.com",
+  "donorImage": "https://i.imgur.com/YcYrYFv.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e8727a463be04d3fbc70d1"
+  },
+  "title": "Fresh Water - 5 ltr",
+  "category": "Food",
+  "quantity": {
+    "quantity": "1000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're quenching a thirst for good with a fantastic donation of 500 fresh 5-liter water bottles! This generous contribution will provide a vital resource to families in need within our community.\n\nClean drinking water is essential for good health, and this donation of 2500 liters (500 x 5 liters) will ensure a significant number of people have access to this basic necessity. We are incredibly grateful to the donor for their thoughtful generosity, helping to keep our community hydrated and healthy!",
+  "image": "https://i.imgur.com/wSOEMar.png",
+  "donorName": "William Foster",
+  "donorEmail": "william@gmail.com",
+  "donorImage": "https://i.imgur.com/5AUuEao.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e87402463be04d3fbc70d2"
+  },
+  "title": "Neem Soap - 125 gm",
+  "category": "Hygiene",
+  "quantity": {
+    "quantity": "1000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're glowing with gratitude for a fantastic donation of 1,000 Neem soap bars, each weighing 125 grams! This generous contribution will provide a natural cleansing option for families in our community.\n\nNeem soap, known for its antibacterial and moisturizing properties, is a perfect choice for daily hygiene. With 1,000 bars, this donation will ensure a significant number of people can benefit from this versatile soap. We are incredibly grateful to the donor for their thoughtful gift, helping to promote cleanliness and well-being in our community!",
+  "image": "https://i.imgur.com/KkbpQuQ.png",
+  "donorName": "Olivia Taylor",
+  "donorEmail": "olivia@gmail.com",
+  "donorImage": "https://i.imgur.com/2tGqqL0.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e87818463be04d3fbc70d3"
+  },
+  "title": "Cerelac - 400gm",
+  "category": "Baby",
+  "quantity": {
+    "quantity": "500",
+    "quantityUnit": "Pcs"
+  },
+  "description": "Spoons up for a fantastic donation of 100 boxes of Nestle Cerelac baby cereal, each weighing 400 grams! This generous contribution will provide vital nourishment to babies and families in need within our community.\n\nNestle Cerelac is a nutritious baby food packed with essential vitamins and minerals to support healthy growth and development. With 100 boxes, this donation will ensure a significant number of babies have access to this important source of nutrition. We are incredibly grateful to the donor for their thoughtful gift, helping to nurture the health and well-being of our youngest community members!",
+  "image": "https://i.imgur.com/grcajnO.png",
+  "donorName": "Noah Garcia",
+  "donorEmail": "noah@gmail.com",
+  "donorImage": "https://i.imgur.com/0MQxGD1.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e87889463be04d3fbc70d4"
+  },
+  "title": "Eggs",
+  "category": "Food",
+  "quantity": {
+    "quantity": "5000",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're cracking open joy with a fantastic donation of 5,000 eggs! This incredible contribution will provide a source of complete protein and essential nutrients to families in need within our community.\n\nEggs are a versatile and affordable food, perfect for breakfast, lunch, dinner, or even a nutritious snack. With 5,000 eggs, this donation will ensure a significant number of people have access to this valuable source of nourishment. We are incredibly grateful to the donor for their thoughtful generosity, helping to fuel our community with a healthy and delicious protein option!",
+  "image": "https://i.imgur.com/07jPKTe.png",
+  "donorName": "Daniel Martinez",
+  "donorEmail": "daniel@gmail.com",
+  "donorImage": "https://i.imgur.com/grAht1h.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e878fe463be04d3fbc70d5"
+  },
+  "title": "Potato",
+  "category": "Food",
+  "quantity": {
+    "quantity": "800",
+    "quantityUnit": "kg"
+  },
+  "description": "We're spud-tacularly grateful for a fantastic donation of 200 kg of potatoes! This generous contribution will provide a hearty and versatile staple to families in need within our community.\n\nPotatoes are a budget-friendly and nutrient-rich food, perfect for countless delicious and satisfying meals. With 200 kg of potatoes, this donation will ensure a significant number of people have access to this essential ingredient. We are incredibly grateful to the donor for their thoughtful gift, helping to fill plates and hearts in our community!",
+  "image": "https://i.imgur.com/tiQlHRA.png",
+  "donorName": "Isabella Rahman",
+  "donorEmail": "isabella@gmail.com",
+  "donorImage": "https://i.imgur.com/KbsLlLL.jpg"
+},
+{
+  "_id": {
+    "$oid": "65e879c3463be04d3fbc70d6"
+  },
+  "title": "Teer Salt - 1 kg",
+  "category": "Food",
+  "quantity": {
+    "quantity": "800",
+    "quantityUnit": "Pcs"
+  },
+  "description": "We're sprinkling gratitude with a fantastic donation of 300 individual packages of Teer Salt, each weighing 1 kg! This thoughtful contribution will provide a valuable mineral supplement to families in need within our community.\n\nTeer salt, a natural source of electrolytes, can help with hydration and overall well-being. With 300 packages, this donation will ensure a significant number of people have access to this beneficial dietary supplement. We are incredibly grateful to the donor for their thoughtful gift, helping to promote good health in our community!",
+  "image": "https://i.imgur.com/ShOQF7e.png",
+  "donorName": "Liam Nguyen",
+  "donorEmail": "liam@gmail.com",
+  "donorImage": "https://i.imgur.com/dKXHeoa.jpg"
+}]
