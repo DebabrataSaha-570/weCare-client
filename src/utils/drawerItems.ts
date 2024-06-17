@@ -11,7 +11,7 @@ export const drawerItems = (role: UserRole) => {
       roleMenus.push(
         {
           title: "Dashboard",
-          path: "/dashboard/user",
+          path: "/dashboard",
           icon: FaHome,
         },
         {

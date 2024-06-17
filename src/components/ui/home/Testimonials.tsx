@@ -129,7 +129,7 @@ const Testimonials = () => {
       <div className="my-10">
         <div className="slider-container">
           <Slider {...settings}>
-            {data?.slice(0, 6)?.map((testimonial: TTestimonial) => (
+            {data?.map((testimonial: TTestimonial) => (
               <div key={testimonial._id}>
                 <div className="card   bg-[--color2] mx-2">
                   <div className="card-body text-quickSand">

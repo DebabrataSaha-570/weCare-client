@@ -1,31 +1,12 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import DashboardNavbar from "../ui/dashboard/DashboardNavbar";
-import { MdOutlineCalculate } from "react-icons/md";
-import { FaListUl, FaPlus } from "react-icons/fa";
-import { FaPenToSquare } from "react-icons/fa6";
-import { useEffect, useState } from "react";
-import { GetUserInfo } from "../../services/auth.service";
-import { useAppSelector } from "../../redux/hook";
-import { verifyToken } from "../../utils/verifyToken";
+
 import { drawerItems } from "../../utils/drawerItems";
 import { UserRole } from "../../types";
-
-type DecodedToken = {
-  role?: string;
-};
+import { useUserRole } from "../hooks/getUserRole";
 
 const DashboardLayout = () => {
-  const [userRole, setUserRole] = useState("");
-  const { token } = useAppSelector((state) => state.auth);
-
-  useEffect(() => {
-    if (token) {
-      const decodedData = verifyToken(token) as DecodedToken;
-      // console.log(decodedData);
-      const role = decodedData?.role || "";
-      setUserRole(role);
-    }
-  }, [token]);
+  const userRole = useUserRole();
 
   return (
     <div className="">
