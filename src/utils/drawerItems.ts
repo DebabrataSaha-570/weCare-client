@@ -16,22 +16,22 @@ export const drawerItems = (role: UserRole) => {
         },
         {
           title: "My Donation",
-          path: "/dashboard/user/my-donation",
+          path: "/dashboard/my-donation",
           icon: FaHome,
         },
         {
           title: "Add Donation",
-          path: "/dashboard/user/add-donation",
+          path: "/dashboard/add-donation",
           icon: FaHome,
         },
         {
           title: "Add Review",
-          path: "/dashboard/user/add-review",
+          path: "/dashboard/add-review",
           icon: FaHome,
         },
         {
           title: "My Review",
-          path: "/dashboard/user/my-review",
+          path: "/dashboard/my-review",
           icon: FaHome,
         }
       );
@@ -41,22 +41,22 @@ export const drawerItems = (role: UserRole) => {
       roleMenus.push(
         {
           title: "Dashboard",
-          path: "/dashboard/admin",
+          path: "/dashboard",
           icon: FaHome,
         },
         {
           title: "All Donations",
-          path: "/dashboard/admin/all-donation",
+          path: "/dashboard/all-donation",
           icon: FaHome,
         },
         {
           title: "All Users",
-          path: "/dashboard/admin/users",
+          path: "/dashboard/users",
           icon: FaHome,
         },
         {
           title: "All Reviews",
-          path: "/dashboard/admin/reviews",
+          path: "/dashboard/reviews",
           icon: FaHome,
         }
       );

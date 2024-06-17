@@ -31,6 +31,7 @@ const DashboardLayout = () => {
                 <NavLink
                   key={index}
                   to={item.path}
+                  end
                   className={({ isActive }) =>
                     ` px-4 py-3 text-base rounded-lg mb-3 ${
                       isActive ? "bg-primary text-[--color4]" : ""

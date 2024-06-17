@@ -16,6 +16,14 @@ import Volunteer from "../pages/Volunteer";
 import AboutUs from "../pages/AboutUsPage";
 import Community from "../pages/Community";
 import Leaderboard from "../pages/Leaderboard";
+import Dashboard from "../components/ui/dashboard/Dashboard";
+import AllUsers from "../components/ui/dashboard/admin/AllUsers";
+import AllReviews from "../components/ui/dashboard/admin/AllReviews";
+import AllDonations from "../components/ui/dashboard/admin/AllDonations";
+import MyDonation from "../components/ui/dashboard/user/MyDonation";
+import AddDonation from "../components/ui/dashboard/user/AddDonation";
+import AddReview from "../components/ui/dashboard/user/AddReview";
+import MyReview from "../components/ui/dashboard/user/MyReview";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +81,7 @@ const router = createBrowserRouter([
 
   {
     path: "/dashboard",
+
     element: (
       <ProtectedRoute>
         <DashboardLayout></DashboardLayout>
@@ -83,33 +92,64 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <ProtectedRoute>
-            <SupplyCalculation></SupplyCalculation>
+            <Dashboard></Dashboard>
           </ProtectedRoute>
         ),
       },
       {
-        path: "supplies",
+        path: "all-donation",
         element: (
           <ProtectedRoute>
-            <DashboardAllSupplies></DashboardAllSupplies>
+            <AllDonations></AllDonations>
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "users",
+        element: (
+          <ProtectedRoute>
+            <AllUsers></AllUsers>
           </ProtectedRoute>
         ),
       },
       {
-        path: "create-supply",
+        path: "reviews",
         element: (
           <ProtectedRoute>
-            {" "}
-            <CreateSupply></CreateSupply>{" "}
+            <AllReviews></AllReviews>
           </ProtectedRoute>
         ),
       },
       {
-        path: "create-testimonial",
+        path: "my-donation",
         element: (
           <ProtectedRoute>
-            {" "}
-            <CreateTestimonials></CreateTestimonials>{" "}
+            <MyDonation></MyDonation>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "add-donation",
+        element: (
+          <ProtectedRoute>
+            <AddDonation></AddDonation>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "add-review",
+        element: (
+          <ProtectedRoute>
+            <AddReview></AddReview>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "my-review",
+        element: (
+          <ProtectedRoute>
+            <MyReview></MyReview>
           </ProtectedRoute>
         ),
       },
