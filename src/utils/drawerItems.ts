@@ -2,6 +2,8 @@ import { USER_ROLE } from "../constants/role";
 import { DrawerItems, UserRole } from "../types";
 import { FaListUl } from "react-icons/fa6";
 import { FaPlus, FaUsers, FaClipboardList, FaHome } from "react-icons/fa";
+import { MdRateReview } from "react-icons/md";
+import { RiFileList2Fill } from "react-icons/ri";
 
 export const drawerItems = (role: UserRole) => {
   const roleMenus: DrawerItems[] = [];
@@ -17,22 +19,22 @@ export const drawerItems = (role: UserRole) => {
         {
           title: "My Donation",
           path: "/dashboard/my-donation",
-          icon: FaHome,
-        },
-        {
-          title: "Add Donation",
-          path: "/dashboard/add-donation",
-          icon: FaHome,
-        },
-        {
-          title: "Add Review",
-          path: "/dashboard/add-review",
-          icon: FaHome,
+          icon: FaListUl,
         },
         {
           title: "My Review",
           path: "/dashboard/my-review",
-          icon: FaHome,
+          icon: RiFileList2Fill,
+        },
+        {
+          title: "Add Donation",
+          path: "/dashboard/add-donation",
+          icon: FaPlus,
+        },
+        {
+          title: "Add Review",
+          path: "/dashboard/add-review",
+          icon: MdRateReview,
         }
       );
       break;
@@ -47,17 +49,17 @@ export const drawerItems = (role: UserRole) => {
         {
           title: "All Donations",
           path: "/dashboard/all-donation",
-          icon: FaHome,
+          icon: FaListUl,
         },
         {
           title: "All Users",
           path: "/dashboard/users",
-          icon: FaHome,
+          icon: FaUsers,
         },
         {
           title: "All Reviews",
           path: "/dashboard/reviews",
-          icon: FaHome,
+          icon: FaClipboardList,
         }
       );
       break;
