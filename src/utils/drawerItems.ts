@@ -63,6 +63,30 @@ export const drawerItems = (role: UserRole) => {
         }
       );
       break;
+    case USER_ROLE.SUPER_ADMIN:
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: "/dashboard",
+          icon: FaHome,
+        },
+        {
+          title: "All Donations",
+          path: "/dashboard/all-donation",
+          icon: FaListUl,
+        },
+        {
+          title: "All Users",
+          path: "/dashboard/users",
+          icon: FaUsers,
+        },
+        {
+          title: "All Reviews",
+          path: "/dashboard/reviews",
+          icon: FaClipboardList,
+        }
+      );
+      break;
 
     default:
       break;

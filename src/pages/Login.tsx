@@ -153,7 +153,8 @@ const Login = () => {
             <h2 className="card-title">User Login Credentials</h2>
             <h3>
               {" "}
-              <span className="font-bold">Email :</span> abc@gmail.com{" "}
+              <span className="font-bold">Email :</span>{" "}
+              emilyjohnson777@gmail.com{" "}
             </h3>
             <h3>
               {" "}
@@ -161,7 +162,9 @@ const Login = () => {
             </h3>
 
             <button
-              onClick={() => handleCopyCredentials("abc@gmail.com", "123456")}
+              onClick={() =>
+                handleCopyCredentials("emilyjohnson777@gmail.com", "123456")
+              }
               className="btn btn-primary rounded-full text-white"
             >
               Copy Credentials

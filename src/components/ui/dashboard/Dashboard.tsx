@@ -4,10 +4,12 @@ import UserDashboard from "./user/UserDashboard";
 
 const Dashboard = () => {
   const userRole = useUserRole();
+
   return (
     <div>
       {userRole === "user" && <UserDashboard></UserDashboard>}
-      {userRole === "admin" && <AdminDashboard></AdminDashboard>}
+      {userRole === "admin" ||
+        (userRole === "super admin" && <AdminDashboard></AdminDashboard>)}
     </div>
   );
 };
