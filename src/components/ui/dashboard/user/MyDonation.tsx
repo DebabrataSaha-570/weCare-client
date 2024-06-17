@@ -1,8 +1,17 @@
+import { useUserRole } from "../../../hooks/getUserRole";
+
 const MyDonation = () => {
+  const userRole = useUserRole();
   return (
-    <div>
-      <h3>This is my Donation component - users</h3>
-    </div>
+    <>
+      {userRole === "user" ? (
+        <div>
+          <h3>This is my Donation component - users</h3>
+        </div>
+      ) : (
+        <h2>Page Not Found</h2>
+      )}
+    </>
   );
 };
 
