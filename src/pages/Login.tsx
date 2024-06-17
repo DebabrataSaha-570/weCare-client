@@ -13,6 +13,13 @@ type FormInputs = {
   password: string;
 };
 
+// interface TErrorMessage {
+//   status?: number;
+//   data?: {
+//     message: string;
+//   };
+// }
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -22,6 +29,7 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<FormInputs>();
 
   const handleFormSubmit: SubmitHandler<FormInputs> = async (data) => {
@@ -32,12 +40,19 @@ const Login = () => {
       toast.success("User logged In successfully");
       navigate("/dashboard");
     } catch (error) {
-      toast.error("Something Went Wrong");
+      // const errorMessage = error as TErrorMessage;
+      // toast.error(errorMessage);
+      toast.error("Invalid email or password");
     }
   };
 
+  const handleCopyCredentials = (email: string, password: string) => {
+    setValue("email", email);
+    setValue("password", password);
+  };
+
   return (
-    <Container className="h-[80vh] flex items-center justify-center">
+    <Container className="my-20 flex flex-col md:flex-row gap-5 items-center  justify-around">
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
         className="card bg-[--card_background] w-96 shadow-xl"
@@ -110,6 +125,50 @@ const Login = () => {
           </p>
         </div>
       </form>
+
+      <section className="my-5">
+        <div className="card w-96 bg-[--card_background] shadow-xl">
+          <div className="card-body">
+            <h2 className="card-title">Admin Login Credentials</h2>
+            <h3>
+              {" "}
+              <span className="font-bold">Email :</span> admin@gmail.com{" "}
+            </h3>
+            <h3>
+              {" "}
+              <span className="font-bold">Password :</span> admin123456{" "}
+            </h3>
+            <button
+              onClick={() =>
+                handleCopyCredentials("admin@gmail.com", "admin123456")
+              }
+              className="btn btn-primary rounded-full text-white"
+            >
+              Copy Credentials
+            </button>
+          </div>
+        </div>
+        <div className="card w-96 bg-[--card_background] shadow-xl my-5">
+          <div className="card-body">
+            <h2 className="card-title">User Login Credentials</h2>
+            <h3>
+              {" "}
+              <span className="font-bold">Email :</span> abc@gmail.com{" "}
+            </h3>
+            <h3>
+              {" "}
+              <span className="font-bold">Password :</span> 123456{" "}
+            </h3>
+
+            <button
+              onClick={() => handleCopyCredentials("abc@gmail.com", "123456")}
+              className="btn btn-primary rounded-full text-white"
+            >
+              Copy Credentials
+            </button>
+          </div>
+        </div>
+      </section>
     </Container>
   );
 };
