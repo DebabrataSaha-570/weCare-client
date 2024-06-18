@@ -11,6 +11,7 @@ import {
 import Container from "../../Container";
 import Modal from "../../Modal";
 import { useAppSelector } from "../../../../redux/hook";
+import toast from "react-hot-toast";
 
 type TSupply = {
   _id: string;
@@ -35,7 +36,7 @@ const AllDonations = () => {
   const auth = useAppSelector((state) => state.auth);
   console.log(auth?.user?.email);
 
-  const [deleteSupply] = useDeleteFoodSupplyMutation();
+  // const [deleteSupply] = useDeleteFoodSupplyMutation();
 
   useEffect(() => {
     if (isModalOpen) {
@@ -75,19 +76,21 @@ const AllDonations = () => {
   };
 
   const handleDelete = (id: string) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteSupply(id);
-      }
-    });
+    console.log(id);
+    toast.error("Only super admin can delete this!");
+    // Swal.fire({
+    //   title: "Are you sure?",
+    //   text: "You won't be able to revert this!",
+    //   icon: "warning",
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#3085d6",
+    //   cancelButtonColor: "#d33",
+    //   confirmButtonText: "Yes, delete it!",
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     deleteSupply(id);
+    //   }
+    // });
   };
 
   return (
@@ -125,7 +128,7 @@ const AllDonations = () => {
                       </td>
                       <td className="flex">
                         <button
-                          className="btn btn-warning text-[--color4]  mx-3"
+                          className="btn btn-secondary btn-sm text-[--color4]  mx-3"
                           onClick={() => handleModalOpen(supply?._id)}
                         >
                           <FaPenToSquare />
@@ -138,7 +141,7 @@ const AllDonations = () => {
                         )}
                         <button
                           onClick={() => handleDelete(supply?._id)}
-                          className="btn btn-error text-[--color4] "
+                          className="btn btn-sm btn-error text-[--color4] "
                         >
                           <FaTrashCan />
                         </button>

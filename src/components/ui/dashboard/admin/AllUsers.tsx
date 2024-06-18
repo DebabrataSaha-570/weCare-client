@@ -53,7 +53,7 @@ const AllUsers = () => {
 
   const handleDelete = (id: string) => {
     console.log(id);
-    toast.error("Only Super Admin Can Delete this");
+    toast.error("Only super admin can delete this!");
   };
 
   return (
@@ -99,7 +99,7 @@ const AllUsers = () => {
                         )}
                         <button
                           onClick={() => handleDelete(user._id)}
-                          className="btn btn-sm btn-error"
+                          className="btn btn-sm btn-error text-white"
                         >
                           <FaTrashAlt />
                         </button>

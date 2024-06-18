@@ -50,6 +50,13 @@ const weCareApi = baseApi.injectEndpoints({
       }),
       providesTags: ["foods"],
     }),
+    getSingleTestimonial: builder.query({
+      query: (email) => ({
+        url: `/testimonial/${email}`,
+        method: "GET",
+      }),
+      providesTags: ["foods"],
+    }),
     createFoodItem: builder.mutation({
       query: (data) => {
         return {
@@ -137,6 +144,7 @@ export const {
   useGetTestimonialsDataQuery,
   useGetGratitudesDataQuery,
   useGetUsersDataQuery,
+  useGetSingleTestimonialQuery,
   useDeleteFoodSupplyMutation,
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,

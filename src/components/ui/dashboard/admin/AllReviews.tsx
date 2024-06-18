@@ -39,7 +39,7 @@ const AllReviews = () => {
 
   const handleDelete = (id: string) => {
     console.log(id);
-    toast.error("Only Super Admin Can Delete this");
+    toast.error("Only super admin can delete this!");
   };
 
   return (

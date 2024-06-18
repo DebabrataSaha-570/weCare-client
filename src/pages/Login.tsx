@@ -55,7 +55,7 @@ const Login = () => {
     <Container className="my-20 flex flex-col md:flex-row gap-5 items-center  justify-around">
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="card bg-[--card_background] w-96 shadow-xl"
+        className="card  bg-[--color2] w-96 shadow-xl"
       >
         <h3 className="text-center text-3xl  mb-3  font-serif pt-6">Login</h3>
         <div className="card-body ">
@@ -127,7 +127,7 @@ const Login = () => {
       </form>
 
       <section className="my-5">
-        <div className="card w-96 bg-[--card_background] shadow-xl">
+        <div className="card w-96 bg-[--card_background]  shadow-xl">
           <div className="card-body">
             <h2 className="card-title">Admin Login Credentials</h2>
             <h3>
