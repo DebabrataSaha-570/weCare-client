@@ -19,8 +19,7 @@ const AllUsers = () => {
   const userRole = useUserRole();
 
   const { data, isError, isLoading } = useGetUsersDataQuery("");
-  const [updateUserRole, { data: updateRoleResponse }] =
-    useUpdateUserRoleMutation();
+  const [updateUserRole] = useUpdateUserRoleMutation();
 
   if (isLoading) {
     return (
