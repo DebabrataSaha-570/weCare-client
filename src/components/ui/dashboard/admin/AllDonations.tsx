@@ -10,6 +10,7 @@ import {
 } from "../../../../redux/features/weCare/weCare.api";
 import Container from "../../Container";
 import Modal from "../../Modal";
+import { useAppSelector } from "../../../../redux/hook";
 
 type TSupply = {
   _id: string;
@@ -31,6 +32,8 @@ const AllDonations = () => {
   const { data, isError, isLoading } = useGetFoodSuppliesQuery("");
   const [modalId, setModalId] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const auth = useAppSelector((state) => state.auth);
+  console.log(auth?.user?.email);
 
   const [deleteSupply] = useDeleteFoodSupplyMutation();
 
@@ -101,7 +104,7 @@ const AllDonations = () => {
             <div className="overflow-x-auto rounded-lg shadow-sm mt-6">
               <table className="table border">
                 {/* head */}
-                <thead className="bg-[--thead] text-base text-[--color8]">
+                <thead className="bg-[--thead] text-base text-gray-300">
                   <tr className="">
                     <th></th>
                     <th className="">Title</th>

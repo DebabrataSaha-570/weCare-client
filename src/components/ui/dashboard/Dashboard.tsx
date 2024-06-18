@@ -8,8 +8,8 @@ const Dashboard = () => {
   return (
     <div>
       {userRole === "user" && <UserDashboard></UserDashboard>}
-      {userRole === "admin" ||
-        (userRole === "super admin" && <AdminDashboard></AdminDashboard>)}
+      {userRole === "admin" && <AdminDashboard></AdminDashboard>}
+      {userRole === "super admin" && <AdminDashboard></AdminDashboard>}
     </div>
   );
 };

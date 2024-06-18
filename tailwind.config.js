@@ -29,7 +29,8 @@ export default {
 
           "--card_background": "#ffff", //we donate
           "--filter_background": "#6b7280",
-          "--thead": "#9ca3af",
+          "--thead": "#374151",
+          // "--thead": "#9ca3af",
           "--volunteer_form": "#FBF7F4",
           "--create_form": "#d1d5db",
         },
