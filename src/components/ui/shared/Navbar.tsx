@@ -121,6 +121,74 @@ const Navbar = () => {
               {auth?.user?.name}{" "}
             </Link>
           </li>
+          {/* 
+          <li className="dropdown  ">
+            <details>
+              <summary className="w-20 mx-auto">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-sm btn-circle text-left avatar "
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    />
+                  </div>
+                </div>
+              </summary>
+
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content dropdown-right lg:dropdown-end bg-secondary rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a>Logout</a>
+                </li>
+              </ul>
+            </details>
+          </li> */}
+
+          {/* <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                />
+              </div>
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </div> */}
 
           <li>
             <button
@@ -206,7 +274,7 @@ const Navbar = () => {
               weCare
             </Link>
           </div>
-          <div className="navbar-center hidden lg:flex ">
+          <div className="navbar-center hidden lg:flex  ">
             <ul className="menu  menu-horizontal  px-1  font-semibold text-[--color4]">
               {menuItems}
             </ul>

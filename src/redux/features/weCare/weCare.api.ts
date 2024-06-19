@@ -57,6 +57,14 @@ const weCareApi = baseApi.injectEndpoints({
       }),
       providesTags: ["foods"],
     }),
+    getSingleUserDonation: builder.query({
+      query: (email) => ({
+        url: `/donation/${email}`,
+        method: "GET",
+      }),
+      providesTags: ["foods"],
+    }),
+
     createFoodItem: builder.mutation({
       query: (data) => {
         return {
@@ -145,6 +153,7 @@ export const {
   useGetGratitudesDataQuery,
   useGetUsersDataQuery,
   useGetSingleTestimonialQuery,
+  useGetSingleUserDonationQuery,
   useDeleteFoodSupplyMutation,
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,
