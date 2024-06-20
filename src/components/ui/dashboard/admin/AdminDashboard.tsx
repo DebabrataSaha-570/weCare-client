@@ -1,8 +1,21 @@
+import { useUserRole } from "../../../hooks/getUserRole";
+import DashboardGutters from "../DashboardGutters";
+
 const AdminDashboard = () => {
+  const userRole = useUserRole();
+
   return (
-    <div>
-      <h3>This is admin dashboard</h3>
-    </div>
+    <>
+      {userRole ? (
+        <section>
+          <DashboardGutters></DashboardGutters>
+        </section>
+      ) : (
+        <div>
+          <h2>Page Not Found.</h2>
+        </div>
+      )}
+    </>
   );
 };
 

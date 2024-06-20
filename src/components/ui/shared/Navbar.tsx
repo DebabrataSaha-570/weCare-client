@@ -121,6 +121,7 @@ const Navbar = () => {
               {auth?.user?.name}{" "}
             </Link>
           </li>
+
           {/* 
           <li className="dropdown  ">
             <details>

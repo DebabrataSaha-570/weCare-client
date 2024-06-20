@@ -60,7 +60,7 @@ const AllDonations = () => {
   if (isError) {
     return (
       <div className="w-full h-screen flex justify-center items-center">
-        <h2 className="text-red-500">Something went wrong</h2>;
+        <h2 className="text-red-500">Something went wrong</h2>
       </div>
     );
   }

@@ -1,7 +1,9 @@
+import DashboardGutters from "../DashboardGutters";
+
 const UserDashboard = () => {
   return (
     <div>
-      <h2>This is user dashboard home page</h2>
+      <DashboardGutters></DashboardGutters>
     </div>
   );
 };
