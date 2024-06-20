@@ -116,17 +116,30 @@ const AllDonations = () => {
                     <th className="">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="">
+                <tbody>
                   {data?.map((supply: TSupply, index: number) => (
                     <tr key={index} className="">
                       <th>{index + 1}</th>
-                      <td>{supply?.title}</td>
-                      <td>{supply?.category}</td>
+                      {/* <td>{supply?.title}</td> */}
+                      <td className="flex items-center justify-start ">
+                        <img
+                          className="w-20 bg-[--color2]"
+                          src={supply.image}
+                          alt={supply.title}
+                        />
+                        <h3
+                          title={supply.title}
+                          className="whitespace-nowrap truncate"
+                        >
+                          {supply.title}
+                        </h3>
+                      </td>
+                      <td className="">{supply?.category}</td>
                       <td>
                         {supply?.quantity?.quantity}{" "}
                         {supply?.quantity?.quantityUnit}
                       </td>
-                      <td className="flex">
+                      <td className="flex items-center">
                         <button
                           className="btn btn-secondary btn-sm text-[--color4]  mx-3"
                           onClick={() => handleModalOpen(supply?._id)}
