@@ -69,41 +69,42 @@ const DashboardNavbar = () => {
           </Link>
         </div>
 
-        <div>
-          <div className="dropdown dropdown-end">
+        <div className="navbar-end text-[--color4] font-semibold">
+          <div className="dropdown dropdown-end  ">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar"
+              className="btn btn-ghost btn-circle avatar "
             >
               <div className="w-10 rounded-full">
                 {auth?.user?.image ? (
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="user_image"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                   />
                 ) : (
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="user_image"
                     src="https://img.icons8.com/plasticine/100/user-male-circle.png"
                   />
                 )}
               </div>
             </div>
+
             <ul
               tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52 text-[--color2]"
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52"
             >
-              <li>
-                <Link to="/" className="btn btn-ghost text-left btn-sm">
+              <li className="items-start">
+                <Link className="btn btn-ghost text-left btn-sm " to="/">
                   {" "}
-                  <FaUser /> {auth?.user?.name}{" "}
+                  <FaUser /> My Profile
                 </Link>
               </li>
 
-              <li>
+              <li className="items-start">
                 <button
-                  className="btn btn-ghost text-left btn-sm"
+                  className="btn btn-ghost  btn-sm "
                   onClick={handleLogout}
                 >
                   {" "}
@@ -111,7 +112,8 @@ const DashboardNavbar = () => {
                 </button>
               </li>
 
-              <li className="flex justify-center">
+              <li className="items-center">
+                {" "}
                 <span
                   onClick={handleThemeChange}
                   className="btn btn-ghost text-left btn-sm"
@@ -125,6 +127,13 @@ const DashboardNavbar = () => {
               </li>
             </ul>
           </div>
+
+          {auth.token && (
+            <div className="text-[--color4] font-semibold">
+              <h3 className="text-sm">{auth?.user?.name}</h3>
+              <h2 className="text-xs">{auth?.user?.role}</h2>
+            </div>
+          )}
         </div>
       </div>
     </nav>
