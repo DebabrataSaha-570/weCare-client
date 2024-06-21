@@ -3,8 +3,8 @@ import { GiFullPizza } from "react-icons/gi";
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
 import { logOut } from "../../../redux/features/auth/authSlice";
 import { themeChange } from "../../../redux/features/theme/themeSlice";
-import { FaRegMoon } from "react-icons/fa";
-import { PiSunBold } from "react-icons/pi";
+import { FaRegMoon, FaUser } from "react-icons/fa";
+import { PiSignOutBold, PiSunBold } from "react-icons/pi";
 import { useEffect } from "react";
 
 const Navbar = () => {
@@ -30,207 +30,76 @@ const Navbar = () => {
     }
   }, [darkMode]);
   const menuItems = (
-    <>
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
-          }
-        >
-          {" "}
-          Home{" "}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
-          }
-          to="/about-us"
-        >
-          About Us
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
-          }
-          to="/all-supplies"
-        >
-          All Supplies
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${
-              isActive ? " text-primary " : ""
-            }`
-          }
-          to="/community"
-        >
-          Community
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${
-              isActive ? " text-primary " : ""
-            }`
-          }
-          to="/leaderboard"
-        >
-          Leaderboard
-        </NavLink>
-      </li>
+    <p className="flex flex-col md:flex-row items-center">
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+        }
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+        }
+        to="/about-us"
+      >
+        About Us
+      </NavLink>
 
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            ` btn btn-ghost text-left btn-sm ${
-              isActive ? " text-primary " : ""
-            }`
-          }
-          to="/volunteer"
-        >
-          Volunteer Signup
-        </NavLink>
-      </li>
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary" : ""}`
+        }
+        to="/all-supplies"
+      >
+        All Supplies
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary " : ""}`
+        }
+        to="/community"
+      >
+        Community
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary " : ""}`
+        }
+        to="/leaderboard"
+      >
+        Leaderboard
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          ` btn btn-ghost text-left btn-sm ${isActive ? " text-primary " : ""}`
+        }
+        to="/volunteer"
+      >
+        Volunteer Signup
+      </NavLink>
 
       {auth?.token && (
         <>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                ` btn btn-ghost text-left btn-sm ${
-                  isActive ? " text-primary " : ""
-                }`
-              }
-              to="/dashboard"
-            >
-              {" "}
-              Dashboard{" "}
-            </NavLink>
-          </li>
-          <li>
-            <Link className="btn btn-ghost text-left btn-sm" to="/">
-              {" "}
-              {auth?.user?.name}{" "}
-            </Link>
-          </li>
-
-          {/* 
-          <li className="dropdown  ">
-            <details>
-              <summary className="w-20 mx-auto">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-sm btn-circle text-left avatar "
-                >
-                  <div className="w-10 rounded-full">
-                    <img
-                      alt="Tailwind CSS Navbar component"
-                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                    />
-                  </div>
-                </div>
-              </summary>
-
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content dropdown-right lg:dropdown-end bg-secondary rounded-box w-52"
-              >
-                <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
-                </li>
-
-                <li>
-                  <a>Logout</a>
-                </li>
-              </ul>
-            </details>
-          </li> */}
-
-          {/* <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
-              </div>
-            </div>
-
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          </div> */}
-
-          <li>
-            <button
-              className="btn btn-ghost text-left btn-sm"
-              onClick={handleLogout}
-            >
-              {" "}
-              Logout{" "}
-            </button>
-          </li>
-        </>
-      )}
-
-      {!auth.token && (
-        <li>
           <NavLink
             className={({ isActive }) =>
               ` btn btn-ghost text-left btn-sm ${
                 isActive ? " text-primary " : ""
               }`
             }
-            to="/login"
+            to="/dashboard"
           >
             {" "}
-            Login{" "}
+            Dashboard{" "}
           </NavLink>
-        </li>
+        </>
       )}
-      <li className="flex justify-center">
-        <span
-          onClick={handleThemeChange}
-          className="btn btn-ghost text-left btn-sm"
-        >
-          {darkMode ? (
-            <PiSunBold className=" size-5" />
-          ) : (
-            <FaRegMoon className="size-5" />
-          )}
-        </span>
-      </li>
-    </>
+    </p>
   );
   return (
     <nav className="bg-secondary shadow-md sticky top-0 z-50">
@@ -279,6 +148,71 @@ const Navbar = () => {
             <ul className="menu  menu-horizontal  px-1  font-semibold text-[--color4]">
               {menuItems}
             </ul>
+          </div>
+
+          <div className="navbar-end font-semibold text-[--color4]">
+            {auth.token && (
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52"
+                >
+                  <li>
+                    <Link className="btn btn-ghost text-left btn-sm" to="/">
+                      {" "}
+                      <FaUser /> {auth?.user?.name}{" "}
+                    </Link>
+                  </li>
+
+                  <li>
+                    <button
+                      className="btn btn-ghost text-left btn-sm"
+                      onClick={handleLogout}
+                    >
+                      {" "}
+                      <PiSignOutBold /> Logout{" "}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {!auth.token && (
+              <NavLink
+                className={({ isActive }) =>
+                  ` btn btn-ghost text-left btn-sm ${
+                    isActive ? " text-primary " : ""
+                  }`
+                }
+                to="/login"
+              >
+                {" "}
+                Login{" "}
+              </NavLink>
+            )}
+
+            <span
+              onClick={handleThemeChange}
+              className="btn btn-ghost text-left btn-sm"
+            >
+              {darkMode ? (
+                <PiSunBold className=" size-5" />
+              ) : (
+                <FaRegMoon className="size-5" />
+              )}
+            </span>
           </div>
         </div>
       </section>
