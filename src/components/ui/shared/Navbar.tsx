@@ -12,6 +12,8 @@ const Navbar = () => {
   const auth = useAppSelector((state) => state.auth);
   const { darkMode } = useAppSelector((state) => state.theme);
 
+  console.log(auth.user);
+
   const handleLogout = () => {
     dispatch(logOut());
   };
@@ -159,10 +161,17 @@ const Navbar = () => {
                   className="btn btn-ghost btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img
-                      alt="Tailwind CSS Navbar component"
-                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                    />
+                    {auth?.user?.image ? (
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      />
+                    ) : (
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src="https://img.icons8.com/plasticine/100/user-male-circle.png"
+                      />
+                    )}
                   </div>
                 </div>
                 <ul
