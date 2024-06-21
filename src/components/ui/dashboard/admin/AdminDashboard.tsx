@@ -1,6 +1,7 @@
 import { useUserRole } from "../../../hooks/getUserRole";
 import DashboardGutters from "../DashboardGutters";
 import RecentDonations from "../RecentDonations";
+import RecentReviews from "../RecentReviews";
 import SupplyCalculation from "../SupplyCalculation";
 
 const AdminDashboard = () => {
@@ -16,9 +17,10 @@ const AdminDashboard = () => {
               <SupplyCalculation></SupplyCalculation>
             </div>
             <div className="flex-[40%]">
-              <RecentDonations></RecentDonations>
+              <RecentDonations showViewAll={true}></RecentDonations>
             </div>
           </div>
+          <RecentReviews showViewAll={true}></RecentReviews>
         </section>
       ) : (
         <div>

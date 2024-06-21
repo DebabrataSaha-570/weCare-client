@@ -1,30 +1,28 @@
 import { GoArrowRight } from "react-icons/go";
-import { useGetFoodSuppliesQuery } from "../../../redux/features/weCare/weCare.api";
+import { useGetTestimonialsDataQuery } from "../../../redux/features/weCare/weCare.api";
 import { Link } from "react-router-dom";
 
-type TSupply = {
+type TTestimonial = {
   _id: string;
-  title: string;
-  category: string;
-  quantity: {
-    quantity: string;
-    quantityUnit: string;
-  };
-  description: string;
+  name: string;
+  email: string;
+  designation: string;
   image: string;
-  donorName: string;
-  donorAddress: string;
+  supply: string;
+  quantity: string;
+  unit: string;
+  testimonial: string;
 };
 
-const RecentDonations = ({ showViewAll }: { showViewAll: boolean }) => {
+const RecentReviews = ({ showViewAll }: { showViewAll: boolean }) => {
   const {
-    data: donationData,
+    data: testimonialsData,
     isError,
     isLoading,
-  } = useGetFoodSuppliesQuery("");
-  console.log(donationData);
+  } = useGetTestimonialsDataQuery("");
+  console.log(testimonialsData);
 
-  const lastFiveItems = donationData?.slice(-5);
+  const lastFiveReviews = testimonialsData?.slice(-5);
 
   if (isLoading) {
     return (
@@ -45,10 +43,10 @@ const RecentDonations = ({ showViewAll }: { showViewAll: boolean }) => {
   return (
     <div className="border border-gray-300 rounded-md ">
       <div className="flex justify-between items-center border-b border-gray-300 p-3">
-        <h2 className="text-xl font-semibold">Recent Donations</h2>
+        <h2 className="text-xl font-semibold">Recent Reviews</h2>
         {showViewAll && (
           <Link
-            to="/dashboard/all-donation"
+            to="/dashboard/reviews"
             className="text-sm text-gray-500 flex items-center gap-2"
           >
             View All <GoArrowRight />{" "}
@@ -62,25 +60,25 @@ const RecentDonations = ({ showViewAll }: { showViewAll: boolean }) => {
           <thead className="text-base font-semibold text-black">
             <tr>
               <th>#</th>
-              <th>Item</th>
-              <th className="">Quantity</th>
+              <th>Name</th>
+              <th className="">Designation</th>
+              <th>Review</th>
             </tr>
           </thead>
           <tbody>
-            {lastFiveItems.map((item: TSupply, index: number) => (
+            {lastFiveReviews.map((review: TTestimonial, index: number) => (
               <tr key={index}>
                 <th>{index + 1}</th>
-                <td className="flex items-center justify-start">
+                <td className="flex-0 space-y-2 md:flex md:space-y-0 items-center justify-start gap-2">
                   <img
-                    className="w-20 bg-[--color2]"
-                    src={item.image}
-                    alt={item.title}
+                    className="w-10 md:w-16 lg:w-20 bg-[--color2]"
+                    src={review.image}
+                    alt={review.name}
                   />
-                  <h3>{item.title}</h3>
+                  <h3>{review.name}</h3>
                 </td>
-                <td>
-                  {item.quantity.quantity} {item.quantity.quantityUnit}
-                </td>
+                <td>{review.designation}</td>
+                <td>{review.testimonial}</td>
               </tr>
             ))}
           </tbody>
@@ -90,4 +88,4 @@ const RecentDonations = ({ showViewAll }: { showViewAll: boolean }) => {
   );
 };
 
-export default RecentDonations;
+export default RecentReviews;

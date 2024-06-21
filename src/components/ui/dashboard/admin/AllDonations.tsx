@@ -105,9 +105,9 @@ const AllDonations = () => {
 
           <div>
             <div className="overflow-x-auto rounded-lg shadow-sm mt-6">
-              <table className="table border">
+              <table className="table border ">
                 {/* head */}
-                <thead className="bg-[--thead] text-base text-gray-300">
+                <thead className="bg-[--thead]  text-base text-gray-300">
                   <tr className="">
                     <th></th>
                     <th className="">Title</th>
@@ -118,30 +118,27 @@ const AllDonations = () => {
                 </thead>
                 <tbody>
                   {data?.map((supply: TSupply, index: number) => (
-                    <tr key={index} className="">
+                    <tr key={index} className="items-center">
                       <th>{index + 1}</th>
                       {/* <td>{supply?.title}</td> */}
-                      <td className="flex items-center justify-start ">
+                      <td className=" mb-2 ">
                         <img
                           className="w-20 bg-[--color2]"
                           src={supply.image}
                           alt={supply.title}
                         />
-                        <h3
-                          title={supply.title}
-                          className="whitespace-nowrap truncate"
-                        >
+                        <h3 title={supply.title} className="">
                           {supply.title}
                         </h3>
                       </td>
-                      <td className="">{supply?.category}</td>
-                      <td>
+                      <td className="items-center">{supply?.category}</td>
+                      <td className="items-center">
                         {supply?.quantity?.quantity}{" "}
                         {supply?.quantity?.quantityUnit}
                       </td>
-                      <td className="flex items-center">
+                      <td className=" space-y-2 md:space-x-2 ">
                         <button
-                          className="btn btn-secondary btn-sm text-[--color4]  mx-3"
+                          className="btn btn-secondary btn-sm text-[--color4] "
                           onClick={() => handleModalOpen(supply?._id)}
                         >
                           <FaPenToSquare />

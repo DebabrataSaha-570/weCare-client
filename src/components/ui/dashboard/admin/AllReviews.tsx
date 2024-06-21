@@ -58,6 +58,8 @@ const AllReviews = () => {
                   <tr className="">
                     <th></th>
                     <th className="">Name</th>
+                    <th className="">Designation</th>
+
                     <th>Email</th>
                     <th>Review</th>
                     <th className="">Actions</th>
@@ -67,7 +69,15 @@ const AllReviews = () => {
                   {data.map((review: TTestimonial, index: number) => (
                     <tr key={index}>
                       <th>{index + 1}</th>
-                      <td>{review.name}</td>
+                      <td className=" gap-2">
+                        <img
+                          className="w-10 md:w-16 lg:w-20"
+                          src={review.image}
+                          alt=""
+                        />
+                        <p> {review.name}</p>
+                      </td>
+                      <td>{review.designation}</td>
                       <td>{review.email}</td>
                       <td>{review.testimonial}</td>
                       <td>
