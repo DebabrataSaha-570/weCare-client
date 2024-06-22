@@ -2,6 +2,7 @@ import { USER_ROLE } from "../constants/role";
 import { DrawerItems, UserRole } from "../types";
 import { FaListUl } from "react-icons/fa6";
 import { FaPlus, FaUsers, FaClipboardList, FaHome } from "react-icons/fa";
+import { FaCircleUser } from "react-icons/fa6";
 import { MdRateReview } from "react-icons/md";
 import { RiFileList2Fill } from "react-icons/ri";
 
@@ -20,6 +21,11 @@ export const drawerItems = (role: UserRole) => {
           title: "My Donation",
           path: "/dashboard/my-donation",
           icon: FaListUl,
+        },
+        {
+          title: "My Profile",
+          path: "/dashboard/my-profile",
+          icon: FaCircleUser,
         },
         {
           title: "My Review",
@@ -45,6 +51,11 @@ export const drawerItems = (role: UserRole) => {
           title: "Dashboard",
           path: "/dashboard",
           icon: FaHome,
+        },
+        {
+          title: "My Profile",
+          path: "/dashboard/my-profile",
+          icon: FaCircleUser,
         },
         {
           title: "All Donations",

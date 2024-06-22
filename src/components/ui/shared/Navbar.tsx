@@ -180,7 +180,10 @@ const Navbar = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-secondary rounded-box w-52"
                 >
                   <li className="items-start">
-                    <Link className="btn btn-ghost text-left btn-sm " to="/">
+                    <Link
+                      className="btn btn-ghost text-left btn-sm "
+                      to="/dashboard/my-profile"
+                    >
                       {" "}
                       <FaUser /> My Profile
                     </Link>

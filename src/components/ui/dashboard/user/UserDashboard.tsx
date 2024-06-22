@@ -11,7 +11,7 @@ const UserDashboard = () => {
           <SupplyCalculation></SupplyCalculation>
         </div>
         <div className="flex-[40%]">
-          <RecentDonations></RecentDonations>
+          <RecentDonations showViewAll={false}></RecentDonations>
         </div>
       </div>
     </div>

@@ -20,6 +20,7 @@ import MyDonation from "../components/ui/dashboard/user/MyDonation";
 import AddDonation from "../components/ui/dashboard/user/AddDonation";
 import AddReview from "../components/ui/dashboard/user/AddReview";
 import MyReview from "../components/ui/dashboard/user/MyReview";
+import DashboardMyProfile from "../components/ui/dashboard/DashboardMyProfile";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <AllDonations></AllDonations>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "my-profile",
+        element: (
+          <ProtectedRoute>
+            <DashboardMyProfile></DashboardMyProfile>
           </ProtectedRoute>
         ),
       },
