@@ -1,52 +1,64 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useAddVolunteerMutation } from "../../../redux/features/weCare/weCare.api";
-import { useEffect } from "react";
+import {
+  useGetSingleUserInfoQuery,
+  useUpdateSingleUserInfoMutation,
+} from "../../../redux/features/weCare/weCare.api";
+import { useAppSelector } from "../../../redux/hook";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 type FormInputs = {
-  userFullName: string;
-  volunteerLastName: string;
-  volunteerEmail: string;
-  volunteerNumber: number;
-  volunteerAddress: string;
-  volunteerPhoto: string;
-  volunteerPostalCode: number;
-  volunteerLinkedin: string;
-  volunteerRole: string;
-  volunteerComments: string;
+  name: string;
+  email: string;
+  phoneNumber: number;
+  address: string;
+  photo: string;
+
+  password: string;
 };
 
 const DashboardMyProfile = () => {
-  const [addVolunteer, { data, isLoading, isError }] =
-    useAddVolunteerMutation();
+  const auth = useAppSelector((state) => state.auth);
+  const [loading, setLoading] = useState(false);
+
+  const userEmail = auth.user?.email;
+
+  const { data, isLoading } = useGetSingleUserInfoQuery(userEmail);
+  const [updateUserInfo, response] = useUpdateSingleUserInfoMutation();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormInputs>({
-    defaultValues: {
-      volunteerRole: "",
-    },
-  });
+  } = useForm<FormInputs>({});
 
   const handleCancel = () => {
     reset();
   };
 
-  const handleFormSubmit: SubmitHandler<FormInputs> = (formData) => {
+  const handleFormSubmit: SubmitHandler<FormInputs> = async (formData) => {
     console.log("form data", formData);
-    addVolunteer(formData);
+    setLoading(true);
+    try {
+      await updateUserInfo(formData);
+      toast.success("User info updated successfully!");
+      console.log(response);
+      setLoading(false);
+      reset();
+    } catch (error) {
+      toast.error("Something went wrong!");
+      setLoading(false);
+    }
   };
 
-  useEffect(() => {
-    if (data) {
-      toast.success("Registration Completed Successfully");
-      reset();
-    } else if (isError) {
-      toast.error("Something Went wrong");
-    }
-  }, [data, isError, reset]);
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <span className="loading loading-bars loading-lg "></span>
+      </div>
+    );
+  }
+
   return (
     <section className="px-0 md:px-5">
       <div>
@@ -56,13 +68,22 @@ const DashboardMyProfile = () => {
       <div className="h-28 bg-gradient-to-r from-primary to-[--color1]  w-full rounded-md"></div>
       <div className="flex items-center gap-5">
         <div className="avatar mt-[-35px] ml-[10px] ">
-          <div className="w-28  shadow-lg rounded-full ring ring-gray-200  ring-offset-gray-200 ring-offset-[3px]">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
+          {data?.photo && (
+            <div className="w-28  shadow-lg rounded-full ring ring-gray-200  ring-offset-gray-200 ring-offset-[3px]">
+              <img src={data.photo} />
+            </div>
+          )}
+          {!data?.photo && (
+            <div className="w-28  shadow-lg rounded-full ring ring-gray-200  ring-offset-gray-200 ring-offset-[3px]">
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
+          )}
         </div>
 
         <div>
-          <h2 className="text-lg md:text-xl font-semibold">User Name</h2>
+          <h2 className="text-lg md:text-xl font-semibold">
+            {data?.name || "User Name"}
+          </h2>
           <h4 className="text-sm  font-semibold text-[--color6]">
             Update Your Photo and Personal Details
           </h4>
@@ -77,11 +98,12 @@ const DashboardMyProfile = () => {
             </div>
             <input
               type="text"
-              {...register("userFullName", { required: true })}
+              defaultValue={data?.name}
+              {...register("name", { required: true })}
               placeholder="Type here"
               className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
             />
-            {errors.userFullName && (
+            {errors.name && (
               <span className="text-red-500">Full Name is required</span>
             )}
           </label>
@@ -92,7 +114,8 @@ const DashboardMyProfile = () => {
             </div>
             <input
               type="email"
-              {...register("volunteerEmail", {
+              value={data?.email}
+              {...register("email", {
                 required: "Email is required",
                 pattern: {
                   value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
@@ -102,10 +125,8 @@ const DashboardMyProfile = () => {
               placeholder="example@gmail.com"
               className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
             />
-            {errors.volunteerEmail && (
-              <span className="text-red-500">
-                {errors.volunteerEmail?.message}
-              </span>
+            {errors.email && (
+              <span className="text-red-500">Email is required</span>
             )}
           </label>
         </div>
@@ -117,11 +138,12 @@ const DashboardMyProfile = () => {
             </div>
             <input
               type="number"
-              {...register("volunteerNumber", { required: true })}
+              defaultValue={data.phoneNumber || ""}
+              {...register("phoneNumber", { required: true })}
               placeholder="+88015555555"
               className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
             />
-            {errors.volunteerNumber && (
+            {errors.phoneNumber && (
               <span className="text-red-500">Phone Number is required</span>
             )}
           </label>
@@ -131,11 +153,12 @@ const DashboardMyProfile = () => {
             </div>
             <input
               type="text"
-              {...register("volunteerAddress", { required: true })}
+              defaultValue={data.address || ""}
+              {...register("address", { required: true })}
               placeholder="Thana, Upozila, Zila"
               className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
             />
-            {errors.volunteerAddress && (
+            {errors.address && (
               <span className="text-red-500">Address is required</span>
             )}
           </label>
@@ -144,16 +167,26 @@ const DashboardMyProfile = () => {
         <div className="flex-0 md:flex items-center gap-10 mt-3  mb-5">
           <label className="form-control w-full ">
             <div className="label">
-              <span className="text-lg font-semibold">Linkedin Account :</span>
+              <span className="text-lg font-semibold">Password :</span>
             </div>
-            <input
-              type="text"
-              {...register("volunteerLinkedin", { required: true })}
-              placeholder="https://www.linkedin.com/feed/"
-              className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
-            />
-            {errors.volunteerLinkedin && (
-              <span className="text-red-500">Linkedin Account is required</span>
+            {userEmail === "admin@gmail.com" ||
+            userEmail === "emilyjohnson777@gmail.com" ? (
+              <input
+                type="text"
+                {...register("password", { required: true, disabled: true })}
+                placeholder="update your password (except emily, admin, super admin)"
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
+              />
+            ) : (
+              <input
+                type="text"
+                {...register("password", { required: true })}
+                placeholder="update your password (except emily, admin, super admin)"
+                className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
+              />
+            )}
+            {errors.password && (
+              <span className="text-red-500">Password is required</span>
             )}
           </label>
 
@@ -162,12 +195,12 @@ const DashboardMyProfile = () => {
               <span className="text-lg font-semibold">Photo Url :</span>
             </div>
             <input
-              type="text"
-              {...register("volunteerPhoto", { required: true })}
+              type="url"
+              {...register("photo", { required: true })}
               placeholder="https://pqrst.org/IwfNREx.png"
               className=" p-2 border border-[--color5]  rounded-md w-full bg-transparent"
             />
-            {errors.volunteerPhoto && (
+            {errors.photo && (
               <span className="text-red-500">Photo is required</span>
             )}
           </label>
@@ -182,7 +215,7 @@ const DashboardMyProfile = () => {
             Cancel
           </button>
 
-          {isLoading ? (
+          {loading ? (
             <button className="btn">
               <span className="loading loading-spinner"></span>
               loading

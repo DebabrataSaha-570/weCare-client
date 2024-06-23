@@ -44,7 +44,7 @@ const AllReviews = () => {
 
   return (
     <>
-      {userRole === "admin" ? (
+      {userRole === "admin" || userRole === "super admin" ? (
         <Container>
           <div className="flex justify-center">
             <h2 className="text-2xl md:text-3xl font-semibold">All Reviews</h2>

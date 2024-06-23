@@ -82,6 +82,11 @@ export const drawerItems = (role: UserRole) => {
           icon: FaHome,
         },
         {
+          title: "My Profile",
+          path: "/dashboard/my-profile",
+          icon: FaCircleUser,
+        },
+        {
           title: "All Donations",
           path: "/dashboard/all-donation",
           icon: FaListUl,

@@ -64,6 +64,13 @@ const weCareApi = baseApi.injectEndpoints({
       }),
       providesTags: ["foods"],
     }),
+    getSingleUserInfo: builder.query({
+      query: (email) => ({
+        url: `/user/${email}`,
+        method: "GET",
+      }),
+      providesTags: ["foods"],
+    }),
 
     createFoodItem: builder.mutation({
       query: (data) => {
@@ -123,6 +130,16 @@ const weCareApi = baseApi.injectEndpoints({
       },
       invalidatesTags: ["foods"],
     }),
+    updateSingleUserInfo: builder.mutation({
+      query: (options) => {
+        return {
+          url: `/userInfo/${options.email}`,
+          method: "PUT",
+          body: options,
+        };
+      },
+      invalidatesTags: ["foods"],
+    }),
     deleteFoodSupply: builder.mutation({
       query: (id) => {
         return {
@@ -154,9 +171,11 @@ export const {
   useGetUsersDataQuery,
   useGetSingleTestimonialQuery,
   useGetSingleUserDonationQuery,
+  useGetSingleUserInfoQuery,
   useDeleteFoodSupplyMutation,
   useGetSingleFoodSupplyQuery,
   useUpdateSingleSupplyMutation,
+  useUpdateSingleUserInfoMutation,
   useUpdateUserRoleMutation,
   useGetNewsDataQuery,
   useAddVolunteerMutation,

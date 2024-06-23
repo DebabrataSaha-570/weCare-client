@@ -77,11 +77,8 @@ const DashboardNavbar = () => {
               className="btn btn-ghost btn-circle avatar "
             >
               <div className="w-10 rounded-full">
-                {auth?.user?.image ? (
-                  <img
-                    alt="user_image"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+                {auth?.user?.photo ? (
+                  <img alt="user_image" src={auth?.user?.photo} />
                 ) : (
                   <img
                     alt="user_image"
