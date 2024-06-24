@@ -36,30 +36,37 @@ const SupplyCalculation = () => {
       {
         label: "Total Available Items",
         data: [foodItems, hygieneItems, babyItems],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
+        backgroundColor: ["#50CD89", "#3E97FF", "#F1416C"],
+        // backgroundColor: [
+        //   "rgba(255, 99, 132, 0.2)",
+        //   "rgba(54, 162, 235, 0.2)",
+        //   "rgba(255, 206, 86, 0.2)",
+        //   "rgba(75, 192, 192, 0.2)",
+        //   "rgba(153, 102, 255, 0.2)",
+        //   "rgba(255, 159, 64, 0.2)",
+        // ],
+        borderColor: ["#50CD89", "#3E97FF", "#F1416C"],
+        // borderColor: [
+        //   "rgba(255, 99, 132, 1)",
+        //   "rgba(54, 162, 235, 1)",
+        //   "rgba(255, 206, 86, 1)",
+        //   "rgba(75, 192, 192, 1)",
+        //   "rgba(153, 102, 255, 1)",
+        //   "rgba(255, 159, 64, 1)",
+        // ],
         borderWidth: 1,
       },
     ],
   };
 
   return (
-    <div className="max-w-[80%] md:max-w-[50%] mx-auto">
-      <Pie data={chartData} />
+    <div className=" mr-0 md:mr-3 lg:mr-5  rounded-md">
+      <div className="flex justify-between items-center  rounded-md  pt-2">
+        <h2 className="text-[23px] font-semibold">Donation Statistics</h2>
+      </div>
+      <div className="max-w-[80%] md:max-w-[55%] mx-auto ">
+        <Pie data={chartData} />
+      </div>
     </div>
   );
 };

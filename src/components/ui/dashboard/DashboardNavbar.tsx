@@ -33,7 +33,7 @@ const DashboardNavbar = () => {
 
   return (
     <nav className="bg-secondary sticky top-0 z-50">
-      <div className="navbar flex justify-between">
+      <div className="navbar ">
         <div className="navbar-start">
           <div className="flex lg:hidden navbar-end">
             <label
