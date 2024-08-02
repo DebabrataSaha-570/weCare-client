@@ -61,9 +61,10 @@ const Leaderboard = () => {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="table  mt-10  px-10">
+        <table className="table  mt-5  px-10 rounded-md border">
           {/* head */}
-          <thead className="bg-[--thead] text-base text-[--color8]">
+          <thead className="bg-[#6B7280] text-base text-[--color8]  ">
+            {/* <thead className="bg-[--thead] text-base text-[--color8] "> */}
             <tr className="">
               <th>Position</th>
               <th>Name</th>

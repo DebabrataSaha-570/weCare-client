@@ -195,20 +195,6 @@ const Navbar = () => {
                       <PiSignOutBold /> Logout{" "}
                     </button>
                   </li>
-
-                  <li className="items-center">
-                    {" "}
-                    <span
-                      onClick={handleThemeChange}
-                      className="btn btn-ghost text-left btn-sm"
-                    >
-                      {darkMode ? (
-                        <PiSunBold className=" size-5" />
-                      ) : (
-                        <FaRegMoon className="size-5" />
-                      )}
-                    </span>
-                  </li>
                 </ul>
               </div>
             )}
@@ -233,6 +219,19 @@ const Navbar = () => {
                 Login{" "}
               </NavLink>
             )}
+            <p className="items-center">
+              {" "}
+              <span
+                onClick={handleThemeChange}
+                className="btn btn-ghost text-left btn-sm"
+              >
+                {darkMode ? (
+                  <PiSunBold className=" size-5" />
+                ) : (
+                  <FaRegMoon className="size-5" />
+                )}
+              </span>
+            </p>
           </div>
         </div>
       </section>

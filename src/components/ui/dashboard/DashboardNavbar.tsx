@@ -111,7 +111,6 @@ const DashboardNavbar = () => {
                   <PiSignOutBold /> Logout{" "}
                 </button>
               </li>
-
               <li className="items-center">
                 {" "}
                 <span

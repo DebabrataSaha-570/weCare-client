@@ -126,7 +126,8 @@ const Gallery = () => {
               <div className="absolute bottom-0 w-full bg-primary h-[35%] transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
                 <div className="px-5 py-2 text-[--color4] font-bold text-quickSand">
                   <h3 className="text-2xl ">Food Donation</h3>
-                  <h4 className="text-xl">#Turkey</h4>
+                  <h4 className="text-xl">#Türkiye</h4>
+                  {/* <h4 className="text-xl">#Turkey</h4> */}
                 </div>
               </div>
             </div>
